@@ -44,11 +44,11 @@ $colours = array("Red","Orange","Teal","Blue","Green","Purple","Grey"); //For St
                     echo "Colour Number " . ($x+1) . " is " . $colours[$x] . "<br>";
                 }
                 echo "<br><b>Step 6 2.b</b><br>";
-                $y = 0;
-                foreach ($colours as $values)
+                //$y = 0;
+                foreach ($colours as $num => $colour)
                 {
-                    $y = $y+1;
-                    echo "Colour Number " . ($y) . " is " . $values . "<br>";
+                    //$y = $y+1;
+                    echo "Colour Number " . ($num + 1) . " is " . $colour . "<br>";
                 }
             ?>
         </p>
