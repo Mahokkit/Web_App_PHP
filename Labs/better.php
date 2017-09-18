@@ -42,23 +42,20 @@
                  </tr>
              </thead>
              <tbody>
-             <?php
-            $pounds = 0;
-            while ($pounds <= 100)
-            {
-                // fill in rows
-                 echo "<tr>";
-                     echo "<td>";
-                         echo $pounds;
-                     echo "</td>";
-                     echo "<td>";
-                         echo convert($pounds);
-                     echo "</td>";
-                 echo "</tr>";
-                $pounds += 10;
-            }
-            ?>
-             </tbody>
+                <?php
+                    $pounds = 0;
+                    while ($pounds <= 100) : ?>
+                        <tr>
+                            <td>
+                                <?php echo $pounds; ?>
+                            </td>
+                            <td>
+                                <?php echo convert($pounds); ?>
+                            </td>
+                        </tr>
+                        <?php $pounds += 10; ?>
+                <?php endwhile; ?>
+            </tbody>
         </table>
     </body>
 </html>
