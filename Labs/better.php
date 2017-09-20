@@ -6,29 +6,28 @@
 ?>
 <!DOCTYPE html>
 <html lang=en>
-<head>
-    <meta charset=UTF-8>
-    <title>Better Table</title>
-    <style>
-        table
-        {
+    <head>
+        <meta charset=UTF-8>
+        <title>Better Table</title>
+        <style>
+            table
+            {
 
-            border: 1px solid rebeccapurple;
-            border-collapse: collapse;
-        }
+                border: 1px solid rebeccapurple;
+                border-collapse: collapse;
+            }
 
-        table tr td
-        {
-            border: 1px solid rebeccapurple;
-        }
+            table tr td
+            {
+                border: 1px solid rebeccapurple;
+            }
 
-        table tr th
-        {
-            background: burlywood;
-        }
-
-    </style>
-</head>
+            table tr th
+            {
+                background: burlywood;
+            }
+        </style>
+    </head>
     <body>
         <table>
              <thead>
@@ -44,18 +43,25 @@
              <tbody>
                 <?php
                     $pounds = 0;
-                    while ($pounds <= 100) : ?>
-                        <tr>
-                            <td>
-                                <?php echo $pounds; ?>
-                            </td>
-                            <td>
-                                <?php echo convert($pounds); ?>
-                            </td>
-                        </tr>
-                        <?php $pounds += 10; ?>
-                <?php endwhile; ?>
-            </tbody>
+                    while ($pounds <= 100):
+                ?>
+                <tr>
+                    <td>
+                        <?php
+                            echo $pounds;
+                        ?>
+                    </td>
+                    <td>
+                        <?php
+                            echo convert($pounds);
+                        ?>
+                    </td>
+                </tr>
+                <?php
+                    $pounds += 10;
+                    endwhile;
+                ?>
+             </tbody>
         </table>
     </body>
 </html>
