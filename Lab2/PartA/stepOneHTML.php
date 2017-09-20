@@ -1,5 +1,6 @@
 <?php
     $hurray = array();
+    $string;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,10 +21,13 @@
                 if ($int <= 6)
                 {
                     echo '<h' . $int . '>' . $int . '</h' . $int . '>';
+                    $string = '<h' . $int . '>' . $int . '</h' . $int . '>';
+                    $hurray[] = $string;
                 }
                 else
                 {
                     echo "Invalid Number";
+                    $hurray[] = "Invalid Number";
                 }
             ?>
         </p>
