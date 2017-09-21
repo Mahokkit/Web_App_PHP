@@ -23,7 +23,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Lab Two Part A</title>
+        <title>Lab Two Part A Step 1</title>
     </head>
     <body>
     <form action="#" method="post">
@@ -40,7 +40,8 @@
                 $int = (int)$_POST['num'];
                 $str = (string)$_POST['text'];
 
-                for ($x=0;$x<=6;$x++) {
+                for ($x=0;$x<=6;$x++)
+                {
                     echo test($str, $x) . "<br>";
                 }
             ?>
