@@ -18,29 +18,33 @@
     }
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Lab Two Part A</title>
-</head>
-<body>
-<form action="#" method="post">
-    Enter a number: <input type="number" name="num">
-    <br>
-    Enter a string: <input type="text" name="text">
-    <input type="submit">
-    <br>
-</form>
-<p>
-    You've Entered:
-    <?php
-        $int = (int)$_POST['num'];
-        $str = (string)$_POST['text'];
+    <head>
+        <meta charset="UTF-8">
+        <title>Lab Two Part A</title>
+    </head>
+    <body>
+    <form action="#" method="post">
+        Enter a number: <input type="number" name="num">
+        <br>
+        Enter a string: <input type="text" name="text">
+        <input type="submit">
+        <br>
+    </form>
+        <p>
+            You've Entered: <br>
+            <?php
 
-        echo test($str,$int);
+                $int = (int)$_POST['num'];
+                $str = (string)$_POST['text'];
 
-    ?>
-</p>
-</body>
+                for ($x=0;$x<=6;$x++) {
+                    echo test($str, $x) . "<br>";
+                }
+            ?>
+            <br>
+        </p>
+    </body>
 </html>
