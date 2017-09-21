@@ -1,6 +1,22 @@
 <?php
-$hurray = array();
-$string;
+    $hurray = array();
+
+    function test ($s, $i)
+    {
+        if ($i > 0 && $i <= 6)
+        {
+            $string = '<h' . $i . '>' . $s . '</h' . $i . '>';
+            $hurray[] = $string;
+            return $string;
+        }
+        else
+        {
+            $string = "Invalid Number";
+            $hurray[] = $string;
+            return $string;
+        }
+    }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,16 +37,9 @@ $string;
     <?php
         $int = (int)$_POST['num'];
         $str = (string)$_POST['text'];
-        if ($int > 0 && $int <= 6)
-        {
-            $string = '<h' . $int . '>' . $str . '</h' . $int . '>';
-            echo $string;
-        }
-        else
-        {
-            $string = "Invalid Number";
-            echo $string;
-        }
+
+        echo test($str,$int);
+
     ?>
 </p>
 </body>
