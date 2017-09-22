@@ -1,7 +1,20 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: inet2005
- * Date: 9/21/17
- * Time: 10:15 PM
- */
+    //  1 ft = .3 m and 1 in. = .025
+    $foot = (int)$_POST['foot'];
+    $inch = (int)$_POST['inch'];
+    // convert foot and inch to meter and add them together
+    $meter = ($foot * 0.3048) + ($inch * 0.0254);
+?>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Process Page for StepOne.html</title>
+</head>
+<body>
+<h1>
+    <?php
+    echo "Hello, " . $_POST['firstName'] . " " . $_POST['lastName'] . "! You are " . round($meter, 3) . " meters tall!" ;
+    ?>
+</h1>
+</body>
+</html>

@@ -1,7 +1,13 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: inet2005
- * Date: 9/21/17
- * Time: 10:17 PM
- */
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Process Page for Get</title>
+</head>
+<body>
+<h1>
+    <?php
+    echo "Hello, " . $_GET['firstName'] . " " . $_GET['lastName'];
+    ?>
+</h1>
+</body>
+</html>
