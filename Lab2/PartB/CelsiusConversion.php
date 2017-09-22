@@ -15,6 +15,7 @@ function CelToFah($c)
             table, th, td
             {
                 border: 1px solid black;
+                text-align: center;
             }
             th
             {
