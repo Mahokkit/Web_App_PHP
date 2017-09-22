@@ -7,14 +7,12 @@
 ?>
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Process Page for StepOne.html</title>
-</head>
-<body>
-<h1>
-    <?php
-    echo "Hello, " . $_POST['firstName'] . " " . $_POST['lastName'] . "! You are " . round($meter, 3) . " meters tall!" ;
-    ?>
-</h1>
-</body>
+    <head>
+        <title>Process Page for StepOne.html</title>
+    </head>
+    <body>
+        <?php
+        echo "Hello, " . $_POST['firstName'] . " " . $_POST['lastName'] . "! You are " . round($meter, 3) . " meters tall!" ;
+        ?>
+    </body>
 </html>
