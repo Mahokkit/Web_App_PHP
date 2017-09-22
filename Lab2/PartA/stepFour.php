@@ -8,7 +8,7 @@
         <?php
             echo "<h1>This page was rendered in PHP version " . phpversion() . "</h1><br>";
             echo "<h2>This page was rendered in ZEND version " . zend_version() . "</h2><br>";
-            echo "<h3>"
+            echo "<h3>" . ini_get("default_mimetype") . "</h3>";
         ?>
     </body>
 </html>
