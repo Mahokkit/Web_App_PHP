@@ -26,6 +26,7 @@
         <title>Lab Two Part A Step 1</title>
     </head>
     <body>
+    <p> Step One </p>
     <form action="#" method="post">
         Enter a number: <input type="number" name="num">
         <br>
@@ -47,5 +48,39 @@
             ?>
             <br>
         </p>
+        <p> Step Two</p><br>
+        <?php
+        $var = "blah ";
+        function IncrementByValue($str)
+        {
+            $str .= $str;
+            return $str;
+        }
+
+        $var = IncrementByValue($var);
+        echo "Increment By Value: " . $var . "<br>";
+
+        function IncrementByReference(&$str)
+        {
+            $str .= $str;
+            return $str;
+        }
+
+        $var = IncrementByReference($var);
+        echo "Increment By Reference: " . $var . "<br>";
+        ?>
+        <br>
+        <p> Step Three </p>
+        <?php
+        $MyGlobalVariable = rand(20,100);
+        function usingGlobal()
+        {
+            global $MyGlobalVariable;
+            return $MyGlobalVariable;
+        }
+
+        echo "This Person is " . usingGlobal() . " years old!";
+
+        ?>
     </body>
 </html>
