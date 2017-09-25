@@ -5,10 +5,12 @@
     // convert foot and inch to meter and add them together
     $meter = ($foot * 0.3048) + ($inch * 0.0254);
 
-    $target_dir = "/uploads/";
-    $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-    $uploadOk = 1;
-//    $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+    $uploads_dir = 'uploads/';
+    $fileTmpName = $_FILES['userImage']['tmp_name'];
+    $fileOrigName = $_FILES['userImage']['name'];
+    $fileSize = $_FILES['userImage']['size'];
+    $fileUploadError = $_FILES['userImage']['error']; // 0 means success
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -19,14 +21,23 @@
         <?php
             echo "Hello, " . $_POST['firstName'] . " " . $_POST['lastName'] . "! You are " . round($meter, 3) . " meters tall!" ;
 
-            if(isset($_POST["submit"])) {
-                $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-                if ($check !== false) {
-                    echo "File is an image - " . $check["mime"] . ".";
-                    $uploadOk = 1;
-                } else {
-                    echo "File is not an image.";
-                    $uploadOk = 0;
+            if(isset($fileOrigName)){
+                if (!empty($fileOrigName)){
+                    echo"<p>File is ok</br>";
+                    echo "<p>Tmp: ".$fileTmpName."</p>";
+                    echo "<p>Orig: ".$fileOrigName."</p>";
+                    echo "<p>Size: ".$fileSize."</p>";
+                    echo "<p>Error ".$fileUploadError."</p>";
+
+                    if (move_uploaded_file($fileTmpName,"$uploads_dir/.$fileOrigName")){
+                        echo "<p>File Uploaded</p>";
+                    }
+                    else{
+                        echo "<p>Upload failed</p>";
+                    }
+                }
+                else{
+                    echo "<p> Please Choose a file first</p>";
                 }
             }
         ?>
