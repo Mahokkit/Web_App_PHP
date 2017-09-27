@@ -5,7 +5,7 @@
  * Date: 9/27/17
  * Time: 4:41 PM
  */
-
+    //for step 3
     function getDbConnection()
     {
         $conn = mysqli_connect("localhost", "root", "inet2005", "sakila");
