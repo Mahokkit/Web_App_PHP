@@ -3,6 +3,9 @@
     <head>
         <meta charset="UTF-8">
         <title>Actor Updated</title>
+        <style>
+            table, th, tr, td { border: solid 1px maroon;}
+        </style>
     </head>
     <body>
     <?php
@@ -73,6 +76,6 @@
         ?>
         </tbody>
     </table>
-    <p><a href="form.html">Go Back</a></p>
+    <p><a href="form.php">Go Back</a></p>
     </body>
 </html>

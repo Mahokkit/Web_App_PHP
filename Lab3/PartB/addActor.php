@@ -74,6 +74,6 @@
         ?>
         </tbody>
     </table>
-    <p><a href="form.html">Go Back</a></p>
+    <p><a href="form.php">Go Back</a></p>
     </body>
 </html>

@@ -34,7 +34,7 @@
             <p><label>Actor Id: <input type="text" name="actorId" id="actorId" value="<?php echo $actorId; ?>" /></label></p>
             <p><label>First Name: <input type="text" name="firstName" id="firstName" value="<?php echo $firstName; ?>" /></label></p>
             <p><label>Last Name: <input type="text" name="lastName" id="lastName" value="<?php echo $lastName; ?>" /></label></p>
-            <p><input type="submit" id="submit" value="update" /></p>
+            <p><input type="submit" id="submit" value="Update Actor" /></p>
         </form>
 
     </body>
