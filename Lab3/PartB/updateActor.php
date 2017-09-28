@@ -1,47 +1,46 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
-        <title>Add new actors</title>
-        <style>
-            table, th, tr, td { border: solid 1px maroon;}
-        </style>
+        <meta charset="UTF-8">
+        <title>Actor Updated</title>
     </head>
     <body>
     <?php
-    if(!empty($_POST['firstName']) && !empty($_POST['lastName']))
+
+    require_once("dbConn.php");
+    $conn = getDbConnection();
+
+    if(!empty($_POST['actorId']) && !empty($_POST['firstName']) && !empty($_POST['lastName']))
     {
-        require_once("dbConn.php");
-        $conn = getDbConnection();
-
-        if(!$conn)
-        {
-            die("Unable to connect to database: " . mysqli_connect_error());
-        }
-
-        $sql = "INSERT INTO actor (first_name, last_name) VALUES ('";
+        $sql = "UPDATE actor SET first_name = '";
         $sql .= $_POST['firstName'];
-        $sql .= "','";
+        $sql .= "', last_name = '";
         $sql .= $_POST['lastName'];
-        $sql .= "');";
+        $sql .= "' WHERE actor_id = ";
+        $sql .= $_POST['actorId'];
+        $sql .= ";";
 
         $result = mysqli_query($conn, $sql);
+        $affected = mysqli_affected_rows($conn);
         if(!$result)
         {
-            die("Unable to insert record: " . mysqli_error($conn));
+            die("Unable to update record: " . mysqli_error($conn));
         }
         else
         {
-            echo "<h2>Success! Record was entered.</h2>";
+            echo "<h2>Success! " . $affected . " record was updated.</h2>";
         }
-
-        mysqli_close($conn);
     }
 
+    mysqli_close($conn);
+
     ?>
+
     <table>
         <thead>
-        <th>ID</th>
-        <th>First Name</th>
-        <th>Last Name</th>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
         </thead>
         <tbody>
         <?php
