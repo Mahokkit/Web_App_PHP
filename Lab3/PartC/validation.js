@@ -114,4 +114,21 @@ function filling(a)
         txtEmail.style.textDecoration = 'underline';
     }
 
+    if (a == 'fClear')
+    {
+        txtFName.style.textDecoration = 'none';
+    }
+    else if (a == 'lClear')
+    {
+        txtLName.style.textDecoration = 'none';
+    }
+    else if (a == 'aClear')
+    {
+        txtAddOne.style.textDecoration = 'none';
+    }
+    else if (a == 'eClear')
+    {
+        txtEmail.style.textDecoration = 'none';
+    }
+
 }
