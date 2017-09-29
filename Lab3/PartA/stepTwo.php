@@ -22,7 +22,6 @@
 
             if(isset($_POST['submit']))
             {
-
                 echo "<meta http-equiv='refresh' content='0'>";
             }
             $result = mysqli_query($conn,$sql);
