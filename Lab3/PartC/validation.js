@@ -23,6 +23,7 @@ function checkForm()
     else if (document.forms['myForm'].checkbox.checked == false)
     {
         alert('You must accept the Term and Condition');
+        document.getElementById(['TC']).innerHTML = "Must Accept Term and Conditions"
         return false
     }
     else
