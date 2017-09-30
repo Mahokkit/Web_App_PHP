@@ -82,22 +82,26 @@
         if($rowStarts == 0)
         {
 //            echo "Previous &laquo;";
-            echo "<button> &laquo; </button>";
+            echo "<button> &lt; </button>";
         }
         else
         {
-            echo "<a href='employees.php?id=" . ($rowStarts - 25) ."'><button>&laquo;</button></a>";
+            echo "<a href='employees.php?id=" . ($rowStarts - 25) ."'><button>&lt;</button></a>";
         }
         echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+
         if($rowStarts == $TotalRec-1)
         {
-            echo "<button>&raquo;</button>";
+            echo "<button>&gt;</button>";
         }
         else
         {
-            echo "<a href='employees.php?id=" . ($rowStarts + 25) ."'><button>&raquo;</button></a>";
+            echo "<a href='employees.php?id=" . ($rowStarts + 25) ."'><button>&gt;</button></a>";
         }
 //        Source: https://www.sitepoint.com/community/t/previous-and-next-row-from-mysql-using-php/3354/15
         ?>
     </body>
 </html>
+
+<!--SELECT * FROM (SELECT * FROM employees ORDER BY emp_no DESC LIMIT 25) sub ORDER BY emp_no ASC;-->
+<!--SELECT * FROM employees WHERE first_name LIKE '%war%' OR last_name LIKE '%war%'-->
