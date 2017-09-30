@@ -49,6 +49,5 @@
             <input type="submit">
             <br>
         </form>
-<!--        SELECT * FROM employees WHERE first_name LIKE '%war' OR last_name LIKE '%war%'-->
     </body>
 </html>
