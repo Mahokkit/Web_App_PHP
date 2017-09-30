@@ -10,11 +10,12 @@
                 text-align: center;
             }
         </style>
+        <script src="validation.js" type="text/javascript"></script>
     </head>
     <body>
         <form method="post">
-            Search First and Last Name: <input type="text" name="desc" value="<?php echo $_POST['desc']; ?>">
-            <input type="submit">
+            First and Last Name: <input type="text" name="desc" value="<?php echo $_POST['desc']; ?>">
+            <input type="submit" value="Search">
             <br>
         </form>
         <table>
@@ -40,7 +41,7 @@
 
             $maxRow = 25;
 
-            $TotalRec = mysqli_num_rows(mysqli_query("SELECT * FROM 'employees'"));
+            $TotalRec = mysqli_num_rows(mysqli_query($conn,"SELECT * FROM 'employees'"));
 
             $sql = "SELECT * FROM employees LIMIT $rowStarts, $maxRow";
             $str = (string)$_POST['desc'];
@@ -99,6 +100,7 @@
             echo "<a href='employees.php?id=" . ($rowStarts + 25) ."'><button>&gt;</button></a>";
         }
 //        Source: https://www.sitepoint.com/community/t/previous-and-next-row-from-mysql-using-php/3354/15
+
         ?>
     </body>
 </html>
