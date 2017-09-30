@@ -12,6 +12,11 @@
         </style>
     </head>
     <body>
+        <form method="post">
+            Search First and Last Name: <input type="text" name="desc" value="<?php echo $_POST['desc']; ?>">
+            <input type="submit">
+            <br>
+        </form>
         <table>
             <thead>
             <th>Employee #</th>
@@ -32,14 +37,24 @@
             }else{
                 $rowStarts = 0;
             }
-//            $rowStarts = $_GET['id'];
+
             $maxRow = 25;
 
             $TotalRec = mysqli_num_rows(mysqli_query("SELECT * FROM 'employees'"));
 
-            $sql = "SELECT * FROM `employees` LIMIT $rowStarts, $maxRow";
-//            $sql = "SELECT * FROM `employees` LIMIT 50, 25";
-            $result = mysqli_query($conn,$sql);
+            $sql = "SELECT * FROM employees LIMIT $rowStarts, $maxRow";
+            $str = (string)$_POST['desc'];
+            $searchSQL = "SELECT * FROM employees WHERE first_name LIKE '%$str%' OR last_name LIKE '%$str%' LIMIT $rowStarts,$maxRow";
+
+            if ($str = "")
+            {
+                $result = mysqli_query($conn,$sql);
+            }
+            else
+            {
+                $result = mysqli_query($conn,$searchSQL);
+            }
+
             if(!$result)
             {
                 die("Could not retrieve records from database: " . mysqli_error($conn));
@@ -66,20 +81,21 @@
         <?php
         if($rowStarts == 0)
         {
-            echo "Previous &laquo;";
+//            echo "Previous &laquo;";
+            echo "<button> &laquo; </button>";
         }
         else
         {
-            echo "<a href='employees.php?id=" . ($rowStarts - 25) ."'>Previous &laquo;</a>";
+            echo "<a href='employees.php?id=" . ($rowStarts - 25) ."'><button>&laquo;</button></a>";
         }
         echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
         if($rowStarts == $TotalRec-1)
         {
-            echo "Next &raquo;";
+            echo "<button>&raquo;</button>";
         }
         else
         {
-            echo "<a href='employees.php?id=" . ($rowStarts + 25) ."'>Next &raquo;</a>";
+            echo "<a href='employees.php?id=" . ($rowStarts + 25) ."'><button>&raquo;</button></a>";
         }
 //        Source: https://www.sitepoint.com/community/t/previous-and-next-row-from-mysql-using-php/3354/15
         ?>
