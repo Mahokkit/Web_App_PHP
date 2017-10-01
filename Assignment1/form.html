@@ -9,9 +9,9 @@
         <p>
             <b>Insert New Actor</b>
         </p>
-        <form id="addEmp" name="addEmp" method="post" action="target.html">
+        <form id="addEmp" name="addEmp" method="post" action="target.php">
             <p>
-                <label>Birth Date: <input type="text" name="empBDate" id="empBDate"/></label>
+                <label>Birth Date: <input type="date" name="empBDate" id="empBDate"/></label>
             </p>
             <p>
                 <label>First Name: <input type="text" name="empFName" id="empFName" /></label>
@@ -20,7 +20,16 @@
                 <label>Last Name: <input type="text" name="empLName" id="empLName" /></label>
             </p>
             <p>
-                
+                <label>Gender:
+                    <select name="empGender"required>
+                        <option value="M">Male</option>
+                        <option value="F">Female</option>
+                        <option value="O">Other</option>
+                    </select>
+                </label>
+            </p>
+            <p>
+                <label>Hired Date: <input type="date" name="empHDate" id="empHDate"/></label>
             </p>
             <p>
                 <input type="submit" id="insert" value="Add Employee" name="insert"/>
