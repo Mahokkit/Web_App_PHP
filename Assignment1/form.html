@@ -9,9 +9,9 @@
         <p>
             <b>Insert New Actor</b>
         </p>
-        <form id="addEmp" name="addEmp" method="post" action="target.php">
+        <form id="addEmp" name="addEmp" method="post" action="target.php" onsubmit="Validate()">
             <p>
-                <label>Birth Date: <input type="date" name="empBDate" id="empBDate"/></label>
+                <label>Birth Date: <input type="date" name="empBDate" id="empBDate" value="YYYY/MM/DD" onchange="Validate"/></label>
             </p>
             <p>
                 <label>First Name: <input type="text" name="empFName" id="empFName" /></label>
@@ -29,7 +29,7 @@
                 </label>
             </p>
             <p>
-                <label>Hired Date: <input type="date" name="empHDate" id="empHDate"/></label>
+                <label>Hired Date: <input type="date" name="empHDate" id="empHDate" value="YYYY/MM/DD"/></label>
             </p>
             <p>
                 <input type="submit" id="insert" value="Add Employee" name="insert"/>

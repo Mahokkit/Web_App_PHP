@@ -1,3 +1,24 @@
+function Validate() {
+    var chkdate = document.getElementById("empBDate").value
+    if (document.getElementById("empBDate").value == "")
+    {
+        alert("Please enter the Date..!!")
+
+        return false;
+    }
+    else if (chkdate.match(/^[0-9]{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])/))
+    {
+        alert('works out');
+        return true;
+    }
+    else
+    {
+        alert("date format is wrong")
+        return false;
+    }
+
+}
+
 function checkForm()
 {
     if(document.forms["myForm"].firstName.value.length ==0)
