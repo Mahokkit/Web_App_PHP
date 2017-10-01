@@ -13,10 +13,10 @@
         <script src="validation.js" type="text/javascript"></script>
     </head>
     <body>
+        <p><b>Search First & Last Name From Database</b></p>
         <form method="post">
-            First and Last Name: <input type="text" name="desc" value="<?php echo $_POST['desc']; ?>">
-            <input type="submit" value="Search">
-            <br>
+            <p><label>Search: <input type="text" name="nSearch" value="<?php echo $_POST['nSearch']; ?>"></label></p>
+            <p><input type="submit" value="Submit Query"></p>
         </form>
         <table>
             <thead>
@@ -44,7 +44,7 @@
             $TotalRec = mysqli_num_rows(mysqli_query($conn,"SELECT * FROM 'employees'"));
 
             $sql = "SELECT * FROM employees LIMIT $rowStarts, $maxRow";
-            $str = (string)$_POST['desc'];
+            $str = (string)$_POST['nSearch'];
             $searchSQL = "SELECT * FROM employees WHERE first_name LIKE '%$str%' OR last_name LIKE '%$str%' LIMIT $rowStarts,$maxRow";
 
             if ($str = "")
@@ -55,6 +55,8 @@
             {
                 $result = mysqli_query($conn,$searchSQL);
             }
+
+            $affected = mysqli_affected_rows($conn);
 
             if(!$result)
             {
