@@ -1,10 +1,10 @@
 function validate()
 {
-    if(chkName() === false)
+    if(chkDate() === false)
     {
         return false;
     }
-    else if (chkDate() === false)
+    else if (chkName() === false)
     {
         return false;
     }
@@ -26,14 +26,24 @@ function chkName()
 
     if(!nameChk.test(FName.value))
     {
-        alert("First Name must be Alphabetical!");
+        alert("Name must be Alphabetic!");
+        document.getElementById(['FN']).innerHTML = "Name must be an Alphabetic!";
         return false;
-
     }
-    else if (!nameChk.test(LName.value))
+    else
     {
-        alert("Last Name Must be Alphabetical!")
+        document.getElementById(['FN']).innerHTML = "";
+    }
+
+    if (!nameChk.test(LName.value))
+    {
+        alert("Last Name Must be Alphabetical!");
+        document.getElementById(['LN']).innerHTML = "Must be an Alphabetic!";
         return false;
+    }
+    else
+    {
+        document.getElementById(['LN']).innerHTML = "";
     }
 }
 
@@ -46,13 +56,24 @@ function chkDate()
 
     if (!dateChk.test(BDate.value))
     {
-        alert("Date must be in YYYY-MM-DD Format")
+        alert("Date must be in YYYY-MM-DD Format");
+        document.getElementById(['BD']).innerHTML = "Date must be in YYYY-MM-DD Format";
         return false;
     }
-    else if (!dateChk.test(HDate.value))
+    else
     {
-        alert("Date Must be in YYYY-MM-DD Format")
+        document.getElementById(['BD']).innerHTML = "";
+    }
+
+    if (!dateChk.test(HDate.value))
+    {
+        alert("Date Must be in YYYY-MM-DD Format");
+        document.getElementById(['HD']).innerHTML = "Date must be in YYYY-MM-DD Format";
         return false;
+    }
+    else
+    {
+        document.getElementById(['HD']).innerHTML = "";
     }
 }
 
@@ -64,11 +85,22 @@ function chkCap()
     if (FName.charAt(0) !== FName.charAt(0).toUpperCase())
     {
         alert("First Letter Must be Capital");
+        document.getElementById(['FN']).innerHTML = "First Letter Must be Capital";
         return false;
     }
-    else if (LName.charAt(0) !== LName.charAt(0).toUpperCase())
+    else
+    {
+        document.getElementById(['FN']).innerHTML = "";
+    }
+
+    if (LName.charAt(0) !== LName.charAt(0).toUpperCase())
     {
         alert("First Letter Must be Capital");
+        document.getElementById(['LN']).innerHTML = "First Letter Must be Capital";
         return false;
+    }
+    else
+    {
+        document.getElementById(['LN']).innerHTML = "";
     }
 }

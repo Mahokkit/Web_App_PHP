@@ -11,13 +11,22 @@
         </p>
         <form id="addEmp" name="addEmp" method="post" action="target.php" onsubmit="return validate()">
             <p>
-                <label>Birth Date: <input type="date" name="empBDate" id="empBDate" value="YYYY-MM-DD"/></label>
+                <label>Birth Date:
+                    <input type="date" name="empBDate" id="empBDate" value="YYYY-MM-DD"/>
+                    <span id="BD" style="color: red; font-weight: bold"></span>
+                </label>
             </p>
             <p>
-                <label>First Name: <input type="text" name="empFName" id="empFName" /></label>
+                <label>First Name:
+                    <input type="text" name="empFName" id="empFName" />
+                    <span id="FN" style="color: red; font-weight: bold"></span>
+                </label>
             </p>
             <p>
-                <label>Last Name: <input type="text" name="empLName" id="empLName" /></label>
+                <label>Last Name:
+                    <input type="text" name="empLName" id="empLName" />
+                    <span id="LN" style="color: red; font-weight: bold;"></span>
+                </label>
             </p>
             <p>
                 <label>Gender:
@@ -29,7 +38,10 @@
                 </label>
             </p>
             <p>
-                <label>Hired Date: <input type="date" name="empHDate" id="empHDate" value="YYYY-MM-DD"/></label>
+                <label>Hired Date:
+                    <input type="date" name="empHDate" id="empHDate" value="YYYY-MM-DD"/>
+                    <span id="HD" style="color: red; font-weight: bold;"></span>
+                </label>
             </p>
             <p>
                 <input type="submit" id="insert" value="Add Employee" name="insert"/>
