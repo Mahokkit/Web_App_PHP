@@ -5,9 +5,12 @@
         <title>JavaScript</title>
         <script src="validation.js" type="text/javascript"></script>
     </head>
-    <body>
+    <body onload="load()">
         <form id="myForm" name="myForm" method="post" action="target.html" onsubmit="return checkForm()">
-        <p><label id="fName">First Name: <input type="text" name="firstName" id="firstName" onkeypress="change('FName')" onfocus="filling('fName')" onblur="filling('fClear')"/></label></p>
+        <p><label id="fName" >First Name: <input type="text" name="firstName" id="firstName"
+                                                 onkeypress="change('FName')"
+                                                 onfocus="filling('fName')"
+                                                 onblur="filling('fClear')"/></label></p>
         <p><label id="lName">Last Name: <input type="text" name="lastName" id="lastName" onkeypress="change('LName')" onfocus="filling('lName')" onblur="filling('lClear')"/></label></p>
         <p><label id="addOne">Address 1: <input type="text" name="addressOne" id="addressOne" onkeypress="change('aOne')" onfocus="filling('addOne')" onblur="filling('aClear')"/></label></p>
         <p><label id="addTwo">Address 2: <input type="text" name="addressTwo" id="addressTwo"  /></label></p>

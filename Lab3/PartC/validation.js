@@ -33,6 +33,34 @@ function checkForm()
     }
 }
 
+function load() {
+    var fName = document.getElementById('firstName');
+    var lName = document.getElementById('lastName');
+    var adOne = document.getElementById('addressOne');
+    var email = document.getElementById('email');
+
+    if (fName.value == '') {
+        fName.style.borderColor = 'red';
+        fName.style.background = "";
+    }
+
+    if (lName.value == '') {
+        lName.style.borderColor = 'red';
+        lName.style.background = "";
+    }
+
+    if (adOne.value == '') {
+        adOne.style.borderColor = 'red';
+        adOne.style.background = "";
+    }
+
+    if (email.value == '') {
+        email.style.borderColor = 'red';
+        email.style.background = "";
+    }
+
+}
+
 function change(a)
 {
     var fName = document.getElementById('firstName');
@@ -123,30 +151,67 @@ function filling(a)
     if (a == 'fClear')
     {
         txtFName.style.textDecoration = 'none';
-        fName.style.borderColor = '';
-        fName.style.background = '';
-        fName.style.fontStyle = '';
+        if (fName.value === '')
+        {
+            fName.style.borderColor = 'red';
+            fName.style.background = '';
+            fName.style.fontStyle = '';
+        }
+        else
+        {
+            fName.style.borderColor = '';
+            fName.style.background = '';
+            fName.style.fontStyle = '';
+        }
+
     }
     else if (a == 'lClear')
     {
         txtLName.style.textDecoration = 'none';
-        lName.style.borderColor = '';
-        lName.style.background = '';
-        lName.style.fontStyle = '';
+        if (lName.value === '')
+        {
+            lName.style.borderColor = 'red';
+            lName.style.background = '';
+            lName.style.fontStyle = '';
+        }
+        else
+        {
+            lName.style.borderColor = '';
+            lName.style.background = '';
+            lName.style.fontStyle = '';
+        }
     }
     else if (a == 'aClear')
     {
         txtAddOne.style.textDecoration = 'none';
-        adOne.style.borderColor = '';
-        adOne.style.background = '';
-        adOne.style.fontStyle = '';
+        if (adOne.value === '')
+        {
+            adOne.style.borderColor = 'red';
+            adOne.style.background = '';
+            adOne.style.fontStyle = '';
+        }
+        else
+        {
+            adOne.style.borderColor = '';
+            adOne.style.background = '';
+            adOne.style.fontStyle = '';
+        }
     }
     else if (a == 'eClear')
     {
         txtEmail.style.textDecoration = 'none';
-        email.style.borderColor = '';
-        email.style.background = '';
-        email.style.fontStyle = '';
+        if (email.value === '')
+        {
+            email.style.borderColor = 'red';
+            email.style.background = '';
+            email.style.fontStyle = '';
+        }
+        else
+        {
+            email.style.borderColor = '';
+            email.style.background = '';
+            email.style.fontStyle = '';
+        }
     }
 
 }
