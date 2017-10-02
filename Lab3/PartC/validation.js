@@ -33,61 +33,61 @@ function checkForm()
     }
 }
 
-function change()
+function change(a)
 {
     var fName = document.getElementById('firstName');
     var lName = document.getElementById('lastName');
     var adOne = document.getElementById('addressOne');
     var email = document.getElementById('email');
 
-
-    if(fName.value == '')
-    {
-        fName.style.borderColor = 'red';
-        fName.style.background = "";
-    }
-    else
-    {
-        fName.style.borderColor = '';
-        fName.style.background = 'yellow';
-
-    }
-
-
-    if(lName.value == '')
-    {
-        lName.style.borderColor = 'red';
-        lName.style.background = "";
-    }
-    else
-    {
-        lName.style.borderColor = '';
-        lName.style.background = 'yellow';
-
+    if (a === 'FName') {
+        if (fName.value === '') {
+            fName.style.borderColor = 'red';
+            fName.style.background = "";
+        }
+        else {
+            fName.style.borderColor = '';
+            fName.style.background = 'yellow';
+            fName.style.fontStyle = 'italic';
+        }
     }
 
-    if(adOne.value == '')
-    {
-        adOne.style.borderColor = 'red';
-        adOne.style.background = "";
+    if (a === 'LName') {
+        if (lName.value === '') {
+            lName.style.borderColor = 'red';
+            lName.style.background = "";
+        }
+        else {
+            lName.style.borderColor = '';
+            lName.style.background = 'yellow';
+            lName.style.fontStyle = 'italic';
+        }
     }
-    else
-    {
-        adOne.style.borderColor = '';
-        adOne.style.background = 'yellow';
 
+    if (a === 'aOne') {
+        if (adOne.value === '') {
+            adOne.style.borderColor = 'red';
+            adOne.style.background = "";
+        }
+        else {
+            adOne.style.borderColor = '';
+            adOne.style.background = 'yellow';
+            adOne.style.fontStyle = 'italic';
+
+        }
     }
 
-    if(email.value == '')
-    {
-        email.style.borderColor = 'red';
-        email.style.background = "";
-    }
-    else
-    {
-        email.style.borderColor = '';
-        email.style.background = 'yellow';
+    if (a === 'Email') {
+        if (email.value === '') {
+            email.style.borderColor = 'red';
+            email.style.background = "";
+        }
+        else {
+            email.style.borderColor = '';
+            email.style.background = 'yellow';
+            email.style.fontStyle = 'italic';
 
+        }
     }
 }
 
@@ -97,6 +97,12 @@ function filling(a)
     var txtLName = document.getElementById('lName');
     var txtAddOne = document.getElementById('addOne');
     var txtEmail = document.getElementById('email2')
+
+    var fName = document.getElementById('firstName');
+    var lName = document.getElementById('lastName');
+    var adOne = document.getElementById('addressOne');
+    var email = document.getElementById('email');
+
     if (a == 'fName')
     {
         txtFName.style.textDecoration = 'underline';
@@ -117,18 +123,30 @@ function filling(a)
     if (a == 'fClear')
     {
         txtFName.style.textDecoration = 'none';
+        fName.style.borderColor = '';
+        fName.style.background = '';
+        fName.style.fontStyle = '';
     }
     else if (a == 'lClear')
     {
         txtLName.style.textDecoration = 'none';
+        lName.style.borderColor = '';
+        lName.style.background = '';
+        lName.style.fontStyle = '';
     }
     else if (a == 'aClear')
     {
         txtAddOne.style.textDecoration = 'none';
+        adOne.style.borderColor = '';
+        adOne.style.background = '';
+        adOne.style.fontStyle = '';
     }
     else if (a == 'eClear')
     {
         txtEmail.style.textDecoration = 'none';
+        email.style.borderColor = '';
+        email.style.background = '';
+        email.style.fontStyle = '';
     }
 
 }
