@@ -1,10 +1,14 @@
 function validate()
 {
-    if(chkName() == false)
+    if(chkName() === false)
     {
         return false;
     }
-    else if (chkDate() == false)
+    else if (chkDate() === false)
+    {
+        return false;
+    }
+    else if (chkCap() === false)
     {
         return false;
     }
@@ -48,6 +52,23 @@ function chkDate()
     else if (!dateChk.test(HDate.value))
     {
         alert("Date Must be in YYYY-MM-DD Format")
+        return false;
+    }
+}
+
+function chkCap()
+{
+    var FName = document.getElementById('empFName').value;
+    var LName = document.getElementById('empLName').value;
+
+    if (FName.charAt(0) !== FName.charAt(0).toUpperCase())
+    {
+        alert("First Letter Must be Capital");
+        return false;
+    }
+    else if (LName.charAt(0) !== LName.charAt(0).toUpperCase())
+    {
+        alert("First Letter Must be Capital");
         return false;
     }
 }
