@@ -1,3 +1,11 @@
+<?php
+require_once("dbConn.php");
+$conn = getDbConnection();
+
+$TotalRec = mysqli_fetch_array(mysqli_query($conn,"SELECT emp_no FROM employees ORDER BY emp_no DESC LIMIT 1"));
+// get last row ID
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +17,7 @@
         <p>
             <b>Insert New Employee</b>
         </p>
+        <p><?php echo $TotalRec[0] ?></p>
         <form id="addEmp" name="addEmp" method="post" action="target.php" onsubmit="return validate()">
             <p>
                 <label>Birth Date:
