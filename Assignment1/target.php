@@ -17,7 +17,6 @@
         $empHDate = $_POST['empHDate'];
 
         $sql = "INSERT INTO employees (birth_date, first_name, last_name, gender, hire_date) VALUE ('$empBDate','$empFName', '$empLName','$empGender','$empHDate')";
-
         $result = mysqli_query($conn, $sql);
         $affected = mysqli_affected_rows($conn);
         if(!$result)
@@ -29,12 +28,7 @@
             echo "<h2>Success! " . $affected . " record was updated.</h2>";
         }
 
-        echo
-            "<p>Employee Name: " . $empFName . " " . $empLName . "<br>" .
-            "Employee Birth Date: " . $empBDate . "<br>" .
-            "Employee Gender: " . $empGender . "<br>" .
-            "Employee Hired Date: " . $empHDate . "</p>";
     ?>
-    <p><h1>SUCCESS!</h1></p>
+    <p><a href="employees.php">Employee table to check!</a></p>
 </body>
 </html>
