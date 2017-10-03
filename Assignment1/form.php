@@ -17,8 +17,11 @@ $TotalRec = mysqli_fetch_array(mysqli_query($conn,"SELECT emp_no FROM employees 
         <p>
             <b>Insert New Employee</b>
         </p>
-        <p><?php echo $TotalRec[0] ?></p>
         <form id="addEmp" name="addEmp" method="post" action="target.php" onsubmit="return validate()">
+            <p?
+                <label>Employee ID:
+                    <input type="number" name="empID" id="empID" value="<?php echo $TotalRec[0]+1 ?>" readonly/>
+                </label>
             <p>
                 <label>Birth Date:
                     <input type="date" name="empBDate" id="empBDate" value="YYYY-MM-DD"/>

@@ -10,13 +10,15 @@
         require_once("dbConn.php");
         $conn = getDbConnection();
 
+        $empID = $_POST['empID'];
         $empFName = $_POST['empFName'];
         $empLName = $_POST['empLName'];
         $empBDate = $_POST['empBDate'];
         $empGender = $_POST['empGender'];
         $empHDate = $_POST['empHDate'];
 
-        $sql = "INSERT INTO employees (birth_date, first_name, last_name, gender, hire_date) VALUE ('$empBDate','$empFName', '$empLName','$empGender','$empHDate')";
+        $sql = "INSERT INTO employees (emp_no, birth_date, first_name, last_name, gender, hire_date) 
+VALUE ('$empID','$empBDate','$empFName', '$empLName','$empGender','$empHDate')";
         $result = mysqli_query($conn, $sql);
         $affected = mysqli_affected_rows($conn);
         if(!$result)
