@@ -13,7 +13,7 @@ if(!$conn)
     die("Unable to connect to database: " . mysqli_connect_error());
 }
 $id = $_POST['id'];
-$sql = "SELECT emp_no,birth_date, first_name, last_name, gender, hired_date FROM employees WHERE emp_no = $id";
+$sql = "SELECT * FROM employees WHERE emp_no = $id";
 $result = mysqli_query($conn, $sql);
 if(!$result)
 {
@@ -26,7 +26,7 @@ else
     $empBDate = $data['birth_date'];
     $empFName = $data['first_name'];
     $empLName = $data['last_name'];
-    $empHDate = $data['hired_date'];
+    $empHDate = $data['hire_date'];
 }
 ?>
 
@@ -34,12 +34,12 @@ else
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Adding Employees</title>
+    <title>Editing Employees</title>
     <script src="validation.js" type="text/javascript"></script>
 </head>
 <body>
 <p>
-    <b>Insert New Employee</b>
+    <b>Edit Employee</b>
 </p>
 <form id="addEmp" name="addEmp" method="post" action="edit.php" onsubmit="return validate()">
     <p?
