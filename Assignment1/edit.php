@@ -47,5 +47,6 @@
         mysqli_close($conn);
 
     ?>
+        <p><a href="employees.php">Back to Employee Search Page</a></p>
     </body>
 </html>
