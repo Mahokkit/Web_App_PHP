@@ -99,3 +99,8 @@ else
 
 <!--SELECT * FROM (SELECT * FROM employees ORDER BY emp_no DESC LIMIT 25) sub ORDER BY emp_no ASC;-->
 <!--SELECT * FROM employees WHERE first_name LIKE '%war%' OR last_name LIKE '%war%'-->
+
+<!--<form action="employees.php" method="post">-->
+<!--    <input type="hidden" name="id" value="--><?php //echo $rowStarts - 25; ?><!--" />-->
+<!--    <input type="submit" name="submit" value="&lt;"/>-->
+<!--</form>-->
