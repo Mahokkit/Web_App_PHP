@@ -72,6 +72,8 @@
                     <td><?php echo $row['last_name'] ?></td>
                     <td><?php echo $row['gender'] ?></td>
                     <td><?php echo $row['hire_date'] ?></td>
+                    <td><img src="delete.png" width="25" height="25" /> </td>
+                    <td><img src="edit.png" width="25" height="25" /></td>
                 </tr>
 
                 <?php
