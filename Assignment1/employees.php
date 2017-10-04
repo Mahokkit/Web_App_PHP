@@ -14,7 +14,7 @@
 </head>
 <body>
 <p><b>Search First & Last Name From Database</b></p>
-<form method="post">
+<form method="post" action="employees.php">
     <p><label>Search: <input type="text" name="nSearch" value="<?php echo $_POST['nSearch']; ?>"></label></p>
     <p><input type="submit" value="Submit Query"></p>
 </form>
@@ -31,11 +31,13 @@
     <?php
     require_once("dbConn.php");
     $conn = getDbConnection();
+
     if(isset($_GET['id'])){
         $rowStarts = $_GET['id'];
     }else{
         $rowStarts = 0;
     }
+
     $maxRow = 25;
     $TotalRec = mysqli_num_rows(mysqli_query($conn,"SELECT * FROM 'employees'"));
     $sql = "SELECT * FROM employees LIMIT $rowStarts, $maxRow";
@@ -63,7 +65,13 @@
             <td><?php echo $row['last_name'] ?></td>
             <td><?php echo $row['gender'] ?></td>
             <td><?php echo $row['hire_date'] ?></td>
-            <td><img src="delete.png" width="25" height="25" /> </td>
+<!--            <td><img src="delete.png" width="25" height="25" /> </td>-->
+            <td>
+                <form action="delete.php" method="post">
+                    <input type="hidden" name="id" value="<?php echo $row['emp_no']; ?>" />
+                    <input type="submit" name="submit" value="Delete"/>
+                </form>
+            </td>
             <td><img src="edit.png" width="25" height="25" /></td>
         </tr>
 
@@ -99,8 +107,3 @@ else
 
 <!--SELECT * FROM (SELECT * FROM employees ORDER BY emp_no DESC LIMIT 25) sub ORDER BY emp_no ASC;-->
 <!--SELECT * FROM employees WHERE first_name LIKE '%war%' OR last_name LIKE '%war%'-->
-
-<!--<form action="employees.php" method="post">-->
-<!--    <input type="hidden" name="id" value="--><?php //echo $rowStarts - 25; ?><!--" />-->
-<!--    <input type="submit" name="submit" value="&lt;"/>-->
-<!--</form>-->

@@ -17,8 +17,8 @@
         $empGender = $_POST['empGender'];
         $empHDate = $_POST['empHDate'];
 
-        $sql = "INSERT INTO employees (emp_no, birth_date, first_name, last_name, gender, hire_date) 
-VALUE ('$empID','$empBDate','$empFName', '$empLName','$empGender','$empHDate')";
+        $sql = "INSERT INTO employees (emp_no, birth_date, first_name, last_name, gender, hire_date) ";
+        $sql .= "VALUE ('$empID','$empBDate','$empFName', '$empLName','$empGender','$empHDate')";
         $result = mysqli_query($conn, $sql);
         $affected = mysqli_affected_rows($conn);
         if(!$result)
