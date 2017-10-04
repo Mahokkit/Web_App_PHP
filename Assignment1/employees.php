@@ -72,7 +72,13 @@
                     <input type="submit" name="submit" value="Delete"/>
                 </form>
             </td>
-            <td><img src="edit.png" width="25" height="25" /></td>
+<!--            <td><img src="edit.png" width="25" height="25" /></td>-->
+            <td>
+                <form action="editForm.php.php" method="post">
+                    <input type="hidden" name="id" value="<?php echo $row['emp_no']; ?>" />
+                    <input type="submit" name="submit" value="Edit"/>
+                </form>
+            </td>
         </tr>
 
         <?php
