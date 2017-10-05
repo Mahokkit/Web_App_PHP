@@ -30,7 +30,7 @@ $TotalRec = mysqli_fetch_array(mysqli_query($conn,"SELECT emp_no FROM employees 
             </p>
             <p>
                 <label>First Name:
-                    <input type="text" name="empFName" id="empFName" />
+                    <input tygpe="text" name="empFName" id="empFName" />
                     <span id="FN" style="color: red; font-weight: bold"></span>
                 </label>
             </p>
