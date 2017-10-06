@@ -23,8 +23,5 @@
                 <input type="submit" name="Submit" value="Login"/>
             </p>
         </form>
-        <?php
-
-        ?>
     </body>
 </html>
