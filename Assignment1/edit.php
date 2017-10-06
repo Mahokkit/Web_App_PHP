@@ -1,3 +1,8 @@
+<?php
+    require 'isLoggedIn.php';
+    checkIfLoggedIn();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>

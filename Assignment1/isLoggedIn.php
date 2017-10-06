@@ -3,7 +3,7 @@
 function checkIfLoggedIn()
 {
     session_start();
-    if(empty($_SESSION['LoginUser']))
+    if(empty($_SESSION['loginUser']))
     {
         header("location:mainLogin.php");
     }

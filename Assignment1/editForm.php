@@ -1,33 +1,37 @@
 <?php
-require_once("dbConn.php");
-$conn = getDbConnection();
 
-$TotalRec = mysqli_fetch_array(mysqli_query($conn,"SELECT emp_no FROM employees ORDER BY emp_no DESC LIMIT 1"));
-// get last row ID
+    require 'isLoggedIn.php';
+    checkIfLoggedIn();
+
+    require_once("dbConn.php");
+    $conn = getDbConnection();
+
+    $TotalRec = mysqli_fetch_array(mysqli_query($conn,"SELECT emp_no FROM employees ORDER BY emp_no DESC LIMIT 1"));
+    // get last row ID
 
 
-require_once("dbConn.php");
-$conn = getDbConnection();
-if(!$conn)
-{
-    die("Unable to connect to database: " . mysqli_connect_error());
-}
-$id = $_POST['id'];
-$sql = "SELECT * FROM employees WHERE emp_no = $id";
-$result = mysqli_query($conn, $sql);
-if(!$result)
-{
-    die("Employee with ID# $id was not found");
-}
-else
-{
-    $data = mysqli_fetch_assoc($result);
-    $empID = $data['emp_no'];
-    $empBDate = $data['birth_date'];
-    $empFName = $data['first_name'];
-    $empLName = $data['last_name'];
-    $empHDate = $data['hire_date'];
-}
+    require_once("dbConn.php");
+    $conn = getDbConnection();
+    if(!$conn)
+    {
+        die("Unable to connect to database: " . mysqli_connect_error());
+    }
+    $id = $_POST['id'];
+    $sql = "SELECT * FROM employees WHERE emp_no = $id";
+    $result = mysqli_query($conn, $sql);
+    if(!$result)
+    {
+        die("Employee with ID# $id was not found");
+    }
+    else
+    {
+        $data = mysqli_fetch_assoc($result);
+        $empID = $data['emp_no'];
+        $empBDate = $data['birth_date'];
+        $empFName = $data['first_name'];
+        $empLName = $data['last_name'];
+        $empHDate = $data['hire_date'];
+    }
 ?>
 
 <!DOCTYPE html>

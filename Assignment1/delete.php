@@ -1,4 +1,8 @@
 <?php
+
+    require 'isLoggedIn.php';
+    checkIfLoggedIn();
+
     require_once("dbConn.php");
     $conn = getDbConnection();
 

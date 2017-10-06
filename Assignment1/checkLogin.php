@@ -2,7 +2,7 @@
 session_start();
 ob_start();
 
-$db = mysqli_connect("localhost", "root","inet2005", "test");
+$db = mysqli_connect("localhost", "root","inet2005", "sakila");
 if (!$db)
 {
     die('Could not connect to test database' . mysqli_connect_error());
@@ -17,7 +17,7 @@ if (isset($_POST['loginUser']) && isset($_POST['loginPwd']))
 
     $loginUser = mysqli_real_escape_string($db,$loginUser);
     $loginPwd = mysqli_real_escape_string($db,$loginPwd);
-
+    $loginPwd = hash("sha512", $loginPwd);
     $sql = "SELECT * FROM members WHERE username ='$loginUser'";
     $sql .= " AND password = '$loginPwd';";
 
