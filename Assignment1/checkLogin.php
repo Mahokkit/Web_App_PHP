@@ -31,7 +31,7 @@ if (isset($_POST['loginUser']) && isset($_POST['loginPwd']))
     {
         $_SESSION['loginUser'] = $loginUser;
 //        HTTP REDIRECT
-        header('location:index.php');
+        header('location:page1.php');
     }
     else
     {
