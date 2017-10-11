@@ -8,7 +8,7 @@
     //for step 3
     function getDbConnection()
     {
-        $conn = mysqli_connect("localhost", "root", "inet2005", "employees");
+        $conn = mysqli_connect("localhost", "root", "inet2005", "saika");
         if(!$conn)
         {
             die("Unable to connect to database: " . mysqli_connect_error());
