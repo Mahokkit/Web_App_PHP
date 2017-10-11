@@ -87,5 +87,9 @@
         <input type="submit" id="insert" value="Edit Employee" name="insert"/>
     </p>
 </form>
+<form name="logoutForm" action="logOut.php" method="post">
+    <input type="submit" name="logoutButton" value="Log Out" />
+</form>
+<a href="page1.php">Back to Main Menu</a>
 </body>
 </html>

@@ -53,5 +53,9 @@
 
     ?>
         <p><a href="employees.php">Back to Employee Search Page</a></p>
+        <form name="logoutForm" action="logOut.php" method="post">
+            <input type="submit" name="logoutButton" value="Log Out" />
+        </form>
+        <a href="page1.php">Back to Main Menu</a>
     </body>
 </html>

@@ -22,6 +22,10 @@
     <p><label>Search: <input type="text" name="nSearch" value="<?php echo $_POST['nSearch']; ?>"></label></p>
     <p><input type="submit" value="Submit Query"></p>
 </form>
+<form name="logoutForm" action="logOut.php" method="post">
+    <input type="submit" name="logoutButton" value="Log Out" />
+</form>
+<a href="page1.php">Back to Main Menu</a>
 <table>
     <thead>
     <th>Employee #</th>
