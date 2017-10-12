@@ -2,10 +2,11 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>...</title>
+        <title>My OO-PHP</title>
     </head>
     <body>
         <form>
+
             <fieldset>
                 <legend>Circle</legend>
                 <label>Radius: </label><input type="number" name="radius" />
@@ -23,7 +24,7 @@
                 <label>Height: </label><input type="number" name="height" />
             </fieldset>
 
-            
+            <input type="submit" id="insert" value="Calculate" name="Calculate"/>
         </form>
 
     </body>
