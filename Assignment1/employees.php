@@ -81,6 +81,7 @@
                 </form>
             </td>
 <!--            <td><img src="edit.png" width="25" height="25" /></td>-->
+<!--            <input type="image" src="img_submit.gif" alt="Submit" width="48" height="48">-->
             <td>
                 <form action="editForm.php" method="post">
                     <input type="hidden" name="id" value="<?php echo $row['emp_no']; ?>" />
