@@ -23,8 +23,8 @@ $TotalRec = mysqli_fetch_array(mysqli_query($conn,"SELECT emp_no FROM employees 
         </p>
         <form id="addEmp" name="addEmp" method="post" action="target.php" onsubmit="return validate()">
             <p>
-                <label>Employee ID:
-                    <input type="number" name="empID" id="empID" value="<?php echo $TotalRec[0]+1 ?>" readonly/>
+                <label>
+                    <input type="hidden" name="empID" id="empID" value="<?php echo $TotalRec[0]+1 ?>" readonly/>
                 </label>
             </p>
             <p>

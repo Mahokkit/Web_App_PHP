@@ -47,8 +47,8 @@
 </p>
 <form id="addEmp" name="addEmp" method="post" action="edit.php" onsubmit="return validate()">
     <p?
-    <label>Employee ID:
-        <input type="number" name="empID" id="empID" value="<?php echo $empID ?>" readonly/>
+    <label>
+        <input type="hidden" name="empID" id="empID" value="<?php echo $empID ?>" readonly/>
     </label>
     <p>
         <label>Birth Date:
