@@ -10,31 +10,24 @@
 
     class circle extends shape
     {
-        private $street_legal;
-
-        public function __construct($in_name,$in_owner,$in_mileage,$in_streel_legal)
+        protected $area;
+        protected $radius;
+        public function __construct($in_radius)
         {
-            parent::__construct( $in_name,$in_owner,$in_mileage);
-            $this->street_legal  = $in_streel_legal;
+            $this->radius = $in_radius;
         }
 
         // Abstract class method
         public function CalculateArea()
         {
-            if($this->street_legal)
+            if($this->radius)
             {
-                $this->mileage += 50;
-                return "Drove $this->owner's $this->name fifty miles!";
-            }
-            else
-            {
-                return "You cannot drive this car on the highway!";
+                $this->area = M_PI * (pow($this->radius, 2));
+
+                //M_PI is Pi... so have a pi! Area of Circle = Pi * (Radius)^2
+
+                return round($this->area,2);
             }
         }
 
-        // Interface method
-        public function runIntoTree()
-        {
-            return "Hit a tree. This is the end of $this->owner's $this->name!";
-        }
     }
