@@ -1,7 +1,35 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: inet2005
+ * User: Edward Ma
  * Date: 10/12/17
  * Time: 9:53 PM
  */
+
+require_once("shape.php");
+
+class triangle extends shape
+{
+    protected $area;
+    protected $height;
+    protected $base;
+    public function __construct($in_height, $in_base)
+    {
+        $this->height = $in_height;
+        $this->base = $in_base;
+    }
+
+    // Abstract class method
+    public function CalculateArea()
+    {
+        if($this->height)
+        {
+            $this->area = ($this->height * $this->base) / 2;
+
+            //area of triangle is (height * base) / 2
+
+            return round($this->area,2);
+        }
+    }
+
+}

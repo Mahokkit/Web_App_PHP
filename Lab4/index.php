@@ -8,6 +8,10 @@
     $width = $_POST['width'];
     $base = $_POST['base'];
     $height = $_POST['height'];
+
+    $circleArea = new circle($radius);
+    $squareArea = new square($length, $width);
+    $triangleArea = new triangle($height,$base);
 ?>
 
 <!DOCTYPE html>
@@ -39,22 +43,16 @@
             <input type="submit" id="insert" value="Calculate" name="Calculate"/>
         </form>
 
-        <p>
-            <?php
-                $circleArea = new circle($radius);
-                $squareArea = new square($length, $width);
-//                $triangleArea =;
-                echo "Area of Circle with Radius of "
-                    . $radius
-                    . " is "
-                    . $circleArea->CalculateArea() . "! <br>";
-                echo "Area of Square with height of "
-                    . $length
-                    . " and width of "
-                    . $width
-                    . " is "
-                    . $squareArea->CalculateArea() . "!";
-            ?>
-        </p>
+        <p> Result </p>
+
+        <h1>Shape: Circle</h1>
+        <p>Area: <?php echo $circleArea->CalculateArea() ?> </p>
+
+        <h1>Shape: Square</h1>
+        <p>Area: <?php echo $squareArea->CalculateArea() ?> </p>
+
+        <h1>Shape: Triangle</h1>
+        <p>Area: <?php echo $triangleArea->CalculateArea() ?> </p>
+
     </body>
 </html>
