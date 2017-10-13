@@ -45,13 +45,13 @@
 
         <p> Result </p>
 
-        <h1>Shape: Circle</h1>
+        <h3>Shape: Circle</h3>
         <p>Area: <?php echo $circleArea->CalculateArea() ?> </p>
 
-        <h1>Shape: Square</h1>
+        <h3>Shape: Square</h3>
         <p>Area: <?php echo $squareArea->CalculateArea() ?> </p>
 
-        <h1>Shape: Triangle</h1>
+        <h3>Shape: Triangle</h3>
         <p>Area: <?php echo $triangleArea->CalculateArea() ?> </p>
 
     </body>
