@@ -6,9 +6,10 @@
  * Time: 9:53 PM
  */
 
-require_once("shape.php");
+require_once ("shape.php");
+require_once ("iResizable.php");
 
-class triangle extends shape
+class triangle extends shape implements iResizable
 {
     protected $area;
     protected $height;
@@ -30,6 +31,16 @@ class triangle extends shape
 
             return round($this->area,2);
         }
+    }
+
+    public function grow()
+    {
+        // TODO: Implement growOrShrink() method.
+    }
+
+    public function shrink()
+    {
+        // TODO: Implement shrink() method.
     }
 
 }

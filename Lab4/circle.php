@@ -7,8 +7,9 @@
  */
 
     require_once("shape.php");
+    require_once("iResizable.php");
 
-    class circle extends shape
+    class circle extends shape implements iResizable
     {
         protected $area;
         protected $radius;
@@ -28,6 +29,16 @@
 
                 return round($this->area,2);
             }
+        }
+
+        public function grow()
+        {
+            // TODO: Implement grow() method.
+        }
+
+        public function shrink()
+        {
+            // TODO: Implement shrink() method.
         }
 
     }
