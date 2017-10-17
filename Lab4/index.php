@@ -46,7 +46,7 @@
 <!--        </form>-->
 
 <!--        <form action="--><?php //$_SERVER['PHP_SELF']?><!--" method="POST" enctype="multipart/form-data">-->
-            <label>Grow By (%): </label><input type="number" name="gos" value="<?php echo $gos ?>" />
+<!--            <label>Grow By (%): </label><input type="number" name="gos" value="--><?php //echo $gos ?><!--" />-->
 <!--            <input type="submit" id="grow" value="Grow" name="Grow" />-->
 <!--        </form>-->
 <!---->
@@ -60,11 +60,13 @@
         <h3>Shape: Circle</h3>
         <p>Area: <?php echo $circleArea->CalculateArea() ?> </p>
         <p>Grow or Shrink Area: <?php echo $circleArea->gos() ?></p>
+
         <h3>Shape: Square</h3>
         <p>Area: <?php echo $squareArea->CalculateArea() ?> </p>
 
         <h3>Shape: Triangle</h3>
         <p>Area: <?php echo $triangleArea->CalculateArea() ?> </p>
+        <p>Grow or Shrink Area: <?php echo $triangleArea->gos() ?></p>
 
     </body>
 </html>
