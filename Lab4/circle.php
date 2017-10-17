@@ -6,13 +6,14 @@
  * Time: 9:52 PM
  */
 
-    require_once("shape.php");
-    require_once("iResizable.php");
+    include_once("shape.php");
+    include_once("iResizable.php");
 
     class circle extends shape implements iResizable
     {
         public $area;
         public $radius;
+
         public $gos;
         public $newArea;
 

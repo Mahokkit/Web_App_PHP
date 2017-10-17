@@ -4,13 +4,12 @@
     include("triangle.php");
 
 
-//    $gos = $_POST['gos']; //gos = grow or shrink
-
 
     $circleArea = new circle($_POST['radius'], $_POST['gos']);
     $squareArea = new square($_POST['length'], $_POST['width']);
     $triangleArea = new triangle($_POST['height'],$_POST['base']);
 
+    $radius = $circleArea->radius;
 ?>
 
 <!DOCTYPE html>
