@@ -3,7 +3,7 @@
     include("square.php");
     include("triangle.php");
 
-    $radius = $_POST['radius'];
+//    $radius = $_POST['radius'];
 
     $length = $_POST['length'];
     $width = $_POST['width'];
@@ -11,7 +11,10 @@
     $height = $_POST['height'];
     $gos = $_POST['gos']; //gos = grow or shrink
 
-    $circleArea = new circle($radius,$gos);
+//    $circleArea = new circle($radius,$gos);
+    $circleArea = new circle($_POST['radius'], $gos);
+    $cArea = $circleArea->CalculateArea();
+    $radius = $circleArea->radius();
     $squareArea = new square($length, $width);
     $triangleArea = new triangle($height,$base);
 ?>
@@ -28,7 +31,7 @@
             <fieldset>
                 <legend>Circle</legend>
                 <label>Radius: </label>
-                <input type="number" name="radius" id="radius" value="<?php echo $radius ?>"/>
+                <input type="number" name="radius" id="radius" value="<?php echo $radius; ?>"/>
 
             </fieldset>
 
@@ -60,9 +63,9 @@
         <p> Result </p>
 
         <h3>Shape: Circle</h3>
-        <p>Area: <?php echo $circleArea->CalculateArea() ?> </p>
-        <p>Grow or Shrink Area: <?php echo $circleArea->gos() ?></p>
-        <p>New Radius: <?php echo $circleArea->radius() ?></p>
+        <p>Area: <?php echo $circleArea->CalculateArea(); ?> </p>
+        <p>Grow or Shrink Area: <?php echo $circleArea->gos(); ?></p>
+        <p>New Radius: <?php echo $circleArea->radius(); ?></p>
 
         <h3>Shape: Square</h3>
         <p>Area: <?php echo $squareArea->CalculateArea() ?> </p>

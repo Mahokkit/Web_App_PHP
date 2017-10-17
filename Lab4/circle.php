@@ -11,16 +11,16 @@
 
     class circle extends shape implements iResizable
     {
-        protected $area;
-        protected $radius;
-        protected $gos;
+        public $area;
+        public $radius;
+        public $gos;
 //        protected $shrink;
-        protected $newArea;
+    public $newArea;
 
         public function __construct($in_radius,$in_gos)
         {
             $this->radius = $in_radius;
-            if ($in_gos != null)
+            if ($in_gos != "")
             {
                 $this->gos = $in_gos;
             }
@@ -30,7 +30,7 @@
         // Abstract class method
         public function CalculateArea()
         {
-            if($this->radius)
+            if($this->radius != "")
             {
                 $this->area = M_PI * (pow($this->radius, 2));
 
@@ -45,7 +45,7 @@
             // TODO: Implement grow() method.
 //            $grow = $this->area;
 //            $this->grow = $grow * ($this->grow)/100;
-            if ($this->gos == 100)
+            if ($this->gos = 100 || $this->gos = "")
             {
                 $newArea = $this->area;
                 $this->newArea = $newArea;
