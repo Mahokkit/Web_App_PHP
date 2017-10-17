@@ -3,20 +3,14 @@
     include("square.php");
     include("triangle.php");
 
-//    $radius = $_POST['radius'];
 
-    $length = $_POST['length'];
-    $width = $_POST['width'];
-    $base = $_POST['base'];
-    $height = $_POST['height'];
-    $gos = $_POST['gos']; //gos = grow or shrink
+//    $gos = $_POST['gos']; //gos = grow or shrink
 
-//    $circleArea = new circle($radius,$gos);
-    $circleArea = new circle($_POST['radius'], $gos);
-    $cArea = $circleArea->CalculateArea();
-    $radius = $circleArea->radius();
-    $squareArea = new square($length, $width);
-    $triangleArea = new triangle($height,$base);
+
+    $circleArea = new circle($_POST['radius'], $_POST['gos']);
+    $squareArea = new square($_POST['length'], $_POST['width']);
+    $triangleArea = new triangle($_POST['height'],$_POST['base']);
+
 ?>
 
 <!DOCTYPE html>
@@ -26,13 +20,13 @@
         <title>My OO-PHP</title>
     </head>
     <body>
-        <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post" enctype="multipart/form-data">
+
+        <form action="" method="post">
 
             <fieldset>
                 <legend>Circle</legend>
                 <label>Radius: </label>
-                <input type="number" name="radius" id="radius" value="<?php echo $radius; ?>"/>
-
+                <input type="number" name="radius" id="radius" step="any" value="<?php echo $radius; ?>"/>
             </fieldset>
 
             <fieldset>
@@ -46,18 +40,11 @@
                 <label>Base: </label><input type="number" name="base" value="<?php echo $base ?>" />
                 <label>Height: </label><input type="number" name="height" value="<?php echo $height ?>"/>
             </fieldset>
+
             <p><label>Grow or Shrink By (%): </label><input type="number" name="gos" value="<?php echo $gos ?>" /></p>
+
             <input type="submit" id="insert" value="Calculate" name="Calculate"/>
-<!--        </form>-->
 
-<!--        <form action="--><?php //$_SERVER['PHP_SELF']?><!--" method="POST" enctype="multipart/form-data">-->
-
-<!--            <input type="submit" id="grow" value="Grow" name="Grow" />-->
-<!--        </form>-->
-<!---->
-<!--        <form action="--><?php //$_SERVER['PHP_SELF']?><!--" method="POST" enctype="multipart/form-data">-->
-<!--            <label>Shrink By (%): </label><input type="number" name="shrink" max="100" value="--><?php //echo $shrink ?><!--" />-->
-<!--            <input type="submit" id="shrink" value="Shrink" name="Shrink" />-->
         </form>
 
         <p> Result </p>

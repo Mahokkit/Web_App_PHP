@@ -14,12 +14,12 @@
         public $area;
         public $radius;
         public $gos;
-//        protected $shrink;
-    public $newArea;
+        public $newArea;
 
         public function __construct($in_radius,$in_gos)
         {
             $this->radius = $in_radius;
+
             if ($in_gos != "")
             {
                 $this->gos = $in_gos;
@@ -30,7 +30,7 @@
         // Abstract class method
         public function CalculateArea()
         {
-            if($this->radius != "")
+            if($this->radius)
             {
                 $this->area = M_PI * (pow($this->radius, 2));
 
@@ -43,13 +43,12 @@
         public function gos()
         {
             // TODO: Implement grow() method.
-//            $grow = $this->area;
-//            $this->grow = $grow * ($this->grow)/100;
-            if ($this->gos = 100 || $this->gos = "")
+
+            if ($this->gos == 100 || $this->gos == "")
             {
                 $newArea = $this->area;
-                $this->newArea = $newArea;
-                return $newArea;
+
+                return round($newArea,2);
             }
             else if ($this->gos > 100)
             {
@@ -69,8 +68,16 @@
 
         public function radius()
         {
-            $this->radius = sqrt($this->newArea / M_PI);
-            return round($this->radius,3, PHP_ROUND_HALF_DOWN);
+            if ($this->gos == 100 || $this->gos == null)
+            {
+                $this->radius = sqrt($this->area / M_PI);
+                return round($this->radius, 3, PHP_ROUND_HALF_DOWN);
+            }
+            else
+            {
+                $this->radius = sqrt($this->newArea / M_PI);
+                return round($this->radius, 3, PHP_ROUND_HALF_DOWN);
+            }
         }
 
 
