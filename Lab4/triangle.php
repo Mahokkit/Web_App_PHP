@@ -33,15 +33,11 @@ class triangle extends shape implements iResizable
         }
     }
 
-    public function grow()
+    public function gos()
     {
         // TODO: Implement growOrShrink() method.
 
     }
 
-    public function shrink()
-    {
-        // TODO: Implement shrink() method.
-    }
 
 }

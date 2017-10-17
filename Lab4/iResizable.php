@@ -8,6 +8,6 @@
 
 interface iResizable
 {
-    public function grow();
-    public function shrink();
+    public function gos();
+
 }

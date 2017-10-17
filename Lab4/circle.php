@@ -13,20 +13,16 @@
     {
         protected $area;
         protected $radius;
-        protected $grow;
-        protected $shrink;
-        public function __construct($in_radius,$in_grow, $in_shrink)
+        protected $gos;
+//        protected $shrink;
+        public function __construct($in_radius,$in_gos)
         {
             $this->radius = $in_radius;
-            if ($in_grow != null)
+            if ($in_gos != null)
             {
-                $this->grow = $in_grow;
+                $this->gos = $in_gos;
             }
 
-            if ($in_shrink != null)
-            {
-                $this->shrink = $in_shrink;
-            }
         }
 
         // Abstract class method
@@ -42,26 +38,28 @@
             }
         }
 
-        public function grow()
+        public function gos()
         {
             // TODO: Implement grow() method.
-            $grow = $this->area;
-            $this->grow = $grow * ($this->grow)/100;
+//            $grow = $this->area;
+//            $this->grow = $grow * ($this->grow)/100;
+            if ($this->gos == 100)
+            {
+                return $this->area;
+            }
+            else if ($this->gos > 100)
+            {
+                $newArea = ($this->area * ($this->gos / 100));
+                return round($newArea,2);
+            }
+            else if ($this->gos < 100)
+            {
+                $newArea = ($this->area - ($this->area * ($this->gos / 100)));
+                return round($newArea,2);
+            }
 
-
-            return (round(($this->grow),2));
         }
 
-        public function shrink()
-        {
-            // TODO: Implement shrink() method.
-            $shrink = $this->radius;
-            $area = $this->area;
-//            $this->shrink = M_PI * (pow(($shrink *(($this->shrink)/100)),2));
-            $this->shrink = $area * ($this->shrink / 100);
-
-            return (round(($this->shrink), 2));
-        }
 
         public function radius()
         {
