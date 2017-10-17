@@ -48,16 +48,19 @@
             if ($this->gos == 100)
             {
                 $newArea = $this->area;
+                $this->newArea = $newArea;
                 return $newArea;
             }
             else if ($this->gos > 100)
             {
                 $newArea = ($this->area * ($this->gos / 100));
+                $this->newArea = $newArea;
                 return round($newArea,2);
             }
             else if ($this->gos < 100)
             {
                 $newArea = ($this->area - ($this->area * ($this->gos / 100)));
+                $this->newArea = $newArea;
                 return round($newArea,2);
             }
 
@@ -66,7 +69,7 @@
 
         public function radius()
         {
-            $this->radius = sqrt($this->area / M_PI);
+            $this->radius = sqrt($this->newArea / M_PI);
             return round($this->radius,3, PHP_ROUND_HALF_DOWN);
         }
 
