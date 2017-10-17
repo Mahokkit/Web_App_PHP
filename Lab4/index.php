@@ -1,7 +1,7 @@
 <?php
-    include("circle.php");
-    include("square.php");
-    include("triangle.php");
+    include_once("circle.php");
+    include_once("square.php");
+    include_once("triangle.php");
 
 
 
@@ -10,6 +10,7 @@
     $triangleArea = new triangle($_POST['height'],$_POST['base']);
 
     $radius = $circleArea->radius;
+    $gos = $_POST['gos'];
 ?>
 
 <!DOCTYPE html>

@@ -13,9 +13,9 @@
     {
         public $area;
         public $radius;
-
-        public $gos;
-        public $newArea;
+        public $newR;
+        protected $gos;
+        protected $newArea;
 
         public function __construct($in_radius,$in_gos)
         {
@@ -25,6 +25,7 @@
             {
                 $this->gos = $in_gos;
             }
+
 
         }
 
@@ -71,13 +72,13 @@
         {
             if ($this->gos == 100 || $this->gos == null)
             {
-                $this->radius = sqrt($this->area / M_PI);
+                $this->newR = sqrt($this->area / M_PI);
                 return round($this->radius, 3, PHP_ROUND_HALF_DOWN);
             }
             else
             {
-                $this->radius = sqrt($this->newArea / M_PI);
-                return round($this->radius, 3, PHP_ROUND_HALF_DOWN);
+                $this->newR = sqrt($this->newArea / M_PI);
+                return round($this->newR, 3, PHP_ROUND_HALF_DOWN);
             }
         }
 
