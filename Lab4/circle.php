@@ -15,6 +15,8 @@
         protected $radius;
         protected $gos;
 //        protected $shrink;
+        protected $newArea;
+
         public function __construct($in_radius,$in_gos)
         {
             $this->radius = $in_radius;
@@ -45,7 +47,8 @@
 //            $this->grow = $grow * ($this->grow)/100;
             if ($this->gos == 100)
             {
-                return $this->area;
+                $newArea = $this->area;
+                return $newArea;
             }
             else if ($this->gos > 100)
             {
@@ -66,5 +69,6 @@
             $this->radius = sqrt($this->area / M_PI);
             return round($this->radius,3, PHP_ROUND_HALF_DOWN);
         }
+
 
     }

@@ -3,12 +3,12 @@
     include("square.php");
     include("triangle.php");
 
-    $radius = $_POST['radius'];
+    $radius =  $_POST['radius'];
     $length = $_POST['length'];
     $width = $_POST['width'];
     $base = $_POST['base'];
     $height = $_POST['height'];
-    $gos = $_POST['gos'];
+    $gos = $_POST['gos']; //gos = grow or shrink
 //    $shrink = $_POST['shrink'];
 
     $circleArea = new circle($radius,$gos);
@@ -27,7 +27,8 @@
 
             <fieldset>
                 <legend>Circle</legend>
-                <label>Radius: </label><input type="number" name="radius" id="radius" value="<?php echo $radius ?>"/>
+                <label>Radius: </label>
+                <input type="number" name="radius" id="radius" value="<?php echo $radius ?>"/>
             </fieldset>
 
             <fieldset>
@@ -46,7 +47,7 @@
 <!--        </form>-->
 
 <!--        <form action="--><?php //$_SERVER['PHP_SELF']?><!--" method="POST" enctype="multipart/form-data">-->
-<!--            <label>Grow By (%): </label><input type="number" name="gos" value="--><?php //echo $gos ?><!--" />-->
+            <label>Grow By (%): </label><input type="number" name="gos" value="<?php echo $gos ?>" />
 <!--            <input type="submit" id="grow" value="Grow" name="Grow" />-->
 <!--        </form>-->
 <!---->
