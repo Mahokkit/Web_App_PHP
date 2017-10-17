@@ -43,16 +43,16 @@
             </fieldset>
 
             <input type="submit" id="insert" value="Calculate" name="Calculate"/>
-<!--        </form>-->
-<!---->
-<!--        <form action="--><?php //$_SERVER['PHP_SELF']?><!--" method="POST" enctype="multipart/form-data">-->
-            <label>Grow By (%): </label><input type="number" name="grow" value="<?php echo $grow ?>" />
-<!--            <input type="submit" id="grow" value="Grow" name="Grow" />-->
-<!--        </form>-->
-<!---->
-<!--        <form action="--><?php //$_SERVER['PHP_SELF']?><!--" method="POST" enctype="multipart/form-data">-->
-            <label>Shrink By (%): </label><input type="number" name="shrink" value="<?php echo $shrink ?>" />
-<!--            <input type="submit" id="shrink" value="Shrink" name="Shrink" />-->
+        </form>
+
+        <form action="<?php $_SERVER['PHP_SELF']?>" method="POST" enctype="multipart/form-data">
+            <label>Grow By (%): </label><input type="number" name="grow" min="100" value="<?php echo $grow ?>" />
+            <input type="submit" id="grow" value="Grow" name="Grow" />
+        </form>
+
+        <form action="<?php $_SERVER['PHP_SELF']?>" method="POST" enctype="multipart/form-data">
+            <label>Shrink By (%): </label><input type="number" name="shrink" max="100" value="<?php echo $shrink ?>" />
+            <input type="submit" id="shrink" value="Shrink" name="Shrink" />
         </form>
 
         <p> Result </p>
