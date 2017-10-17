@@ -60,8 +60,7 @@
         <h3>Shape: Circle</h3>
         <p>Area: <?php echo $circleArea->CalculateArea() ?> </p>
         <p>Grow Area: <?php echo $circleArea->grow() ?></p>
-        <p> new radius <?php echo $circleArea->radius() ?></p>
-
+        <p>Shrunk Area: <?php echo $circleArea->shrink() ?></p>
         <h3>Shape: Square</h3>
         <p>Area: <?php echo $squareArea->CalculateArea() ?> </p>
 

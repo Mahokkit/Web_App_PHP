@@ -45,15 +45,22 @@
         public function grow()
         {
             // TODO: Implement grow() method.
-            $this->grow = ($this->grow)/100;
-            $this->area = $this->area * $this->grow;
+            $grow = $this->area;
+            $this->grow = $grow * ($this->grow)/100;
 
-            return (round($this->area,2));
+
+            return (round(($this->grow),2));
         }
 
         public function shrink()
         {
             // TODO: Implement shrink() method.
+            $shrink = $this->radius;
+            $area = $this->area;
+//            $this->shrink = M_PI * (pow(($shrink *(($this->shrink)/100)),2));
+            $this->shrink = $area * ($this->shrink / 100);
+
+            return (round(($this->shrink), 2));
         }
 
         public function radius()
