@@ -44,6 +44,7 @@
             {
                 if ($this->gos == 100 || $this->gos == "")
                 {
+                    $this->area = M_PI * (pow($this->radius, 2));
                     $newArea = $this->area;
 
                     return round($newArea,2);
@@ -94,7 +95,7 @@
         {
             if ($this->gos == 100 || $this->gos == null)
             {
-                $this->newR = sqrt($this->area / M_PI);
+//                $this->newR = sqrt($this->area / M_PI);
                 return round($this->radius, 3, PHP_ROUND_HALF_DOWN);
             }
             else

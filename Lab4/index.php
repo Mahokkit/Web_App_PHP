@@ -5,7 +5,7 @@
 
     $circleArea = new circle($_POST['radius'], $_POST['gos']);
     $squareArea = new square($_POST['length'], $_POST['width']);
-    $triangleArea = new triangle($_POST['height'],$_POST['base']);
+    $triangleArea = new triangle($_POST['height'],$_POST['base'], $_POST['gos']);
 
     $circleArea->CalculateArea();
     $radius = $circleArea->gos();
@@ -16,6 +16,9 @@
     $base = $_POST['base'];
 
     $triangleArea->CalculateArea();
+    $height = $triangleArea->gos();
+
+    $gos = $_POST['gos']; //gos = Grow or Shrink, if it's over 100 than grow, if it's below 100, then shrink.
 
 ?>
 
