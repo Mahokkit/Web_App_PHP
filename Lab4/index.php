@@ -59,7 +59,7 @@
         <p> Result </p>
         <h3>Shape: Circle</h3>
         <p>Area: <?php echo $circleArea->CalculateArea() ?></p>
-        <p>Radius: <?php echo $circleArea->gos() ?></p>
+<!--        <p>Radius: --><?php //echo $circleArea->gos() ?><!--</p>-->
                       
         <h3>Shape: Square</h3>
         <p>Area: <?php echo $squareArea->CalculateArea() ?></p>
