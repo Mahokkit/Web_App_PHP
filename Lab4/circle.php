@@ -32,7 +32,7 @@
         // Abstract class method
         public function CalculateArea()
         {
-            if($this->radius)
+            if(!$this->gos)
             {
                 $this->area = M_PI * (pow($this->radius, 2));
 
@@ -40,35 +40,57 @@
 
                 return round($this->area,2);
             }
+            else
+            {
+                if ($this->gos == 100 || $this->gos == "")
+                {
+                    $newArea = $this->area;
+
+                    return round($newArea,2);
+                }
+                else if ($this->gos > 100)
+                {
+                    $this->area = M_PI * (pow($this->radius, 2));
+                    $newArea = ($this->area * ($this->gos / 100));
+                    $this->newArea = $newArea;
+                    return round($newArea,2);
+                }
+                else if ($this->gos < 100)
+                {
+                    $this->area = M_PI * (pow($this->radius, 2));
+                    $newArea = ($this->area - ($this->area * ($this->gos / 100)));
+                    $this->newArea = $newArea;
+                    return round($newArea,2);
+                }
+            }
         }
+
+//        public function gos()
+//        {
+//
+//            if ($this->gos == 100 || $this->gos == "")
+//            {
+//                $newArea = $this->area;
+//
+//                return round($newArea,2);
+//            }
+//            else if ($this->gos > 100)
+//            {
+//                $newArea = ($this->area * ($this->gos / 100));
+//                $this->newArea = $newArea;
+//                return round($newArea,2);
+//            }
+//            else if ($this->gos < 100)
+//            {
+//                $newArea = ($this->area - ($this->area * ($this->gos / 100)));
+//                $this->newArea = $newArea;
+//                return round($newArea,2);
+//            }
+//
+//        }
+
 
         public function gos()
-        {
-            // TODO: Implement grow() method.
-
-            if ($this->gos == 100 || $this->gos == "")
-            {
-                $newArea = $this->area;
-
-                return round($newArea,2);
-            }
-            else if ($this->gos > 100)
-            {
-                $newArea = ($this->area * ($this->gos / 100));
-                $this->newArea = $newArea;
-                return round($newArea,2);
-            }
-            else if ($this->gos < 100)
-            {
-                $newArea = ($this->area - ($this->area * ($this->gos / 100)));
-                $this->newArea = $newArea;
-                return round($newArea,2);
-            }
-
-        }
-
-
-        public function radius()
         {
             if ($this->gos == 100 || $this->gos == null)
             {
