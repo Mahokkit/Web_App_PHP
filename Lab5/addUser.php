@@ -2,11 +2,8 @@
 session_start();
 ob_start();
 
-$db = mysqli_connect("localhost", "root","inet2005", "sakila");
-if (!$db)
-{
-    die('Could not connect to test database' . mysqli_connect_error());
-}
+require_once("userConn.php");
+$conn = getDbConnection();
 
 $userName = $_POST['loginUser'];
 $passWord = hash("sha512", $_POST['loginPwd']);
