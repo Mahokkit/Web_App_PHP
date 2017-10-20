@@ -28,8 +28,8 @@
                 require_once("userConn.php");
                 $conn = getDbConnection();
 
-                $loginUser = mysqli_real_escape_string($db,$_POST['loginUser']);
-                $loginPwd = mysqli_real_escape_string($db,$_POST['loginPwd']);
+                $loginUser = mysqli_real_escape_string($conn,$_POST['loginUser']);
+                $loginPwd = mysqli_real_escape_string($conn,$_POST['loginPwd']);
 
                 // create a salt based on the number of seconds since
                 // the Unix Epoch (January 1 1970 00:00:00 GMT).
@@ -59,14 +59,14 @@
                 $sqlStatement .= $userSalt;
                 $sqlStatement .= "');";
 
-                $result = mysqli_query($db,$sqlStatement);
+                $result = mysqli_query($conn,$sqlStatement);
 
                 if(!$result)
                 {
-                    die("Unable to create user: " . mysqli_error($db));
+                    die("Unable to create user: " . mysqli_error($conn));
                 }
 
-                $count= mysqli_affected_rows($db);
+                $count= mysqli_affected_rows($conn);
 
                 if($count==1)
                 {

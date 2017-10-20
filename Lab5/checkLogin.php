@@ -8,7 +8,7 @@ session_start();
 ob_start();
 
 require_once("userConn.php");
-$conn = getDbConnection();
+$db = getDbConnection();
 
 $loginUser=$_POST['loginUser'];
 $loginPwd=$_POST['loginPwd'];
