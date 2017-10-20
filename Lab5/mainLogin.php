@@ -23,6 +23,6 @@
                 <input type="submit" name="Submit" value="Login"/>
             </p>
         </form>
-        <a href="newUser.php"> Add New User</a>
+        <a href="newUser.html"> Add New User</a>
     </body>
 </html>
