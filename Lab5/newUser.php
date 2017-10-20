@@ -51,7 +51,7 @@
                 $passwordHash = preg_replace('/^' . $cryptPrefixEscaped . '/','',$passwordHashRaw);
 
                 // insert the new user with hash & salt
-                $sqlStatement = "INSERT INTO `WebUsers`(user_name,user_pwd,salt) VALUES ('";
+                $sqlStatement = "INSERT INTO WebUsers(user_name,user_pwd,salt) VALUES ('";
                 $sqlStatement .= $loginUser;
                 $sqlStatement .= "','";
                 $sqlStatement .= $passwordHash;
