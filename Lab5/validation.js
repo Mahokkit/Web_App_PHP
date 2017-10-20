@@ -104,3 +104,25 @@ function chkCap()
         document.getElementById(['LN']).innerHTML = "";
     }
 }
+
+function checkPassword()
+{
+    var passwordOne = document.getElementById("loginPwd").value;
+    var passwordTwo = document.getElementById("loginPwdConfirm").value;
+    var errorSpanElement = document.getElementById("errorMsg");
+
+    if(passwordOne != passwordTwo)
+    {
+        errorSpanElement.innerHTML = "Passwords do not match!";
+        return false;
+    }
+    else if(passwordOne.length <  8) // should probably have some complexity checking!!
+    {
+        errorSpanElement.innerHTML = "Password does not meet complexity requirements!";
+        return false;
+    }
+    else
+    {
+        return true;
+    }
+}
