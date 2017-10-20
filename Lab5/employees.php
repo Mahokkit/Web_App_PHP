@@ -49,7 +49,7 @@
     $maxRow = 25;
     $TotalRec = mysqli_num_rows(mysqli_query($conn,"SELECT * FROM 'employees'"));
     $sql = "SELECT * FROM employees LIMIT $rowStarts, $maxRow";
-    $str = mysqli_real_escape_string($conn,(string)$_POST['nSearch']); //to prevent SQL Injection
+    $str = mysqli_real_escape_string($conn,(string)$_POST['nSearch']); // To Prevent SQL Injection
     $searchSQL = "SELECT * FROM employees WHERE first_name LIKE '%$str%' OR last_name LIKE '%$str%' LIMIT $rowStarts,$maxRow";
     if ($str = "")
     {
