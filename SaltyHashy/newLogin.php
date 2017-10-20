@@ -26,7 +26,7 @@
             {
                 // Should probably be checking password complexity and match server side as well!!!!
 
-                $db = @mysqli_connect("localhost","empUser", "inet2005","employees");
+                $db = @mysqli_connect("localhost","empAdmin", "inet2005","employees");
                 if (!$db)
                 {
                     die('Could not connect to the employees Database: ' . mysqli_error($db));
