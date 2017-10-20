@@ -73,15 +73,12 @@
             <td><?php echo $row['last_name'] ?></td>
             <td><?php echo $row['gender'] ?></td>
             <td><?php echo $row['hire_date'] ?></td>
-<!--            <td><img src="delete.png" width="25" height="25" /> </td>-->
             <td>
                 <form action="delete.php" method="post">
                     <input type="hidden" name="id" value="<?php echo $row['emp_no']; ?>" />
                     <input type="submit" name="submit" value="Delete"/>
                 </form>
             </td>
-<!--            <td><img src="edit.png" width="25" height="25" /></td>-->
-<!--            <input type="image" src="img_submit.gif" alt="Submit" width="48" height="48">-->
             <td>
                 <form action="editForm.php" method="post">
                     <input type="hidden" name="id" value="<?php echo $row['emp_no']; ?>" />
@@ -99,7 +96,6 @@
 <?php
 if($rowStarts == 0)
 {
-//            echo "Previous &laquo;";
     echo "<button> &lt; </button>";
 }
 else
