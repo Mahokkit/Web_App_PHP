@@ -42,7 +42,7 @@
     if($count==1)
     {
         $_SESSION['LoginUser'] = $loginUser;
-        header("location:page1.php");
+        header("location:employees.php");
     }
     else 
     {
