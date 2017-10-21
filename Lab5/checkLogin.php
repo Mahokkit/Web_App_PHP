@@ -1,8 +1,4 @@
 <?php
-
-
-    // INSERT INTO `WebUsers`(user_name,user_pwd,salt) VALUES ('mike',SHA2(CONCAT('saltedmike', 'whatever'),512),'saltedmike')
-
     session_start();
     
     ob_start();
@@ -26,10 +22,7 @@
     
     if ($count == 1)
     {
-//    	$record = mysqli_fetch_assoc($result);
-//    	$saltedPwd = $record['salt'] . $loginPwd;
-//    	$hashedPwd = hash('sha512',$saltedPwd);
-    	
+
     	// can also use the PHP crypt() function to hash with a SALT
         $record = mysqli_fetch_assoc($result);
         $hashInstructions = '$6$rounds=5000$' . $record['salt'] .'$';
@@ -49,7 +42,6 @@
     if($count==1)
     {
         $_SESSION['LoginUser'] = $loginUser;
-        //$_SESSION['LoginPwd'] = $hashedPassword;
         header("location:page1.php");
     }
     else 
