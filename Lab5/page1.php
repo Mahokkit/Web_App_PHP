@@ -16,7 +16,7 @@ and open the template in the editor.
         <form name="logoutForm" action="logOut.php" method="POST">
             <input type="submit" name="logoutButton" value="Log Out" />
         </form>
-        <h1>First Secured Page</h1>
-        <a href="page2.php">Go to Second Page</a>
+        <h1>Secured Page</h1>
+        <a href="employees.php">Go to Employees</a>
     </body>
 </html>
