@@ -26,11 +26,8 @@
             {
                 // Should probably be checking password complexity and match server side as well!!!!
 
-                $db = @mysqli_connect("localhost","empAdmin", "inet2005","employees");
-                if (!$db)
-                {
-                    die('Could not connect to the employees Database: ' . mysqli_error($db));
-                }
+                require_once("dbConn.php");
+                $db = getDbConnection();
 
                 $loginUser = mysqli_real_escape_string($db,$_POST['loginUser']);
                 $loginPwd = mysqli_real_escape_string($db,$_POST['loginPwd']);

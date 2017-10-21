@@ -6,12 +6,9 @@
     session_start();
     
     ob_start();
-    
-    $db = @mysqli_connect("localhost","empAdmin", "inet2005","employees");
-    if (!$db)
-    {    
-            die('Could not connect to the employees Database: ' . mysqli_error($db));
-    }
+
+    require_once("dbConn.php");
+    $db = getDbConnection();
     
     $loginUser=$_POST['loginUser']; 
     $loginPwd=$_POST['loginPwd'];
