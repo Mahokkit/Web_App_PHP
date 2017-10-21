@@ -27,7 +27,6 @@
     <input type="submit" name="logoutButton" value="Log Out" />
 </form>
 <br>
-<a href="page1.php">Back to Main Menu</a>
 <table>
     <thead>
     <th>Employee #</th>

@@ -67,6 +67,6 @@ $TotalRec = mysqli_fetch_array(mysqli_query($conn,"SELECT emp_no FROM employees 
         <form name="logoutForm" action="logOut.php" method="post">
             <input type="submit" name="logoutButton" value="Log Out" />
         </form>
-        <a href="page1.php">Back to Main Menu</a>
+        <a href="employees.php">Back to Main Menu</a>
     </body>
 </html>
