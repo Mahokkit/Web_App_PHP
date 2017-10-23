@@ -35,9 +35,7 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
     <head>
-        <meta charset="UTF-8">
         <title>Editing Employees</title>
         <script src="validation.js" type="text/javascript"></script>
     </head>

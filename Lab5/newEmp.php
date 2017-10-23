@@ -4,10 +4,8 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Target Page</title>
+    <title>New Employee Added</title>
 </head>
 <body>
     <?php

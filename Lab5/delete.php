@@ -9,9 +9,7 @@
     $id = $_POST['id'];
 ?>
 <!DOCTYPE html>
-<html lang="en">
     <head>
-        <meta charset="UTF-8">
         <title>Deleted Rows</title>
     </head>
     <body>

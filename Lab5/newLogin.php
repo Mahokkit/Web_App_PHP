@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title></title>
+      <title>New Login User</title>
     </head>
     <body>
         <section>

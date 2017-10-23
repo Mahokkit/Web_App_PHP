@@ -11,9 +11,7 @@ $TotalRec = mysqli_fetch_array(mysqli_query($conn,"SELECT emp_no FROM employees 
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
     <head>
-        <meta charset="UTF-8">
         <title>Adding Employees</title>
         <script src="validation.js" type="text/javascript"></script>
     </head>
