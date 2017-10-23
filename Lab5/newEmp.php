@@ -11,7 +11,6 @@
 </head>
 <body>
     <?php
-
         require_once("dbConn.php");
         $conn = getDbConnection();
 

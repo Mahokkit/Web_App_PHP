@@ -2,11 +2,8 @@
 <html>
     <head>
       <title></title>
-      <meta charset="UTF-8" />
     </head>
     <body>
-        <header>
-        </header>
         <section>
             <?php
             require_once('recaptchalib.php');
@@ -82,7 +79,5 @@
             }
             ?>
         </section>
-        <footer>
-        </footer>
     </body>
 </html>
