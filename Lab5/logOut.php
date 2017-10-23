@@ -6,5 +6,5 @@
  */
  session_start();
  session_destroy();
- header("location:mainLogin.html");
+ header("location:index.html");
 ?>

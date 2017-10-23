@@ -69,7 +69,7 @@
                 if($count==1)
                 {
                     echo "<h1>The user was added.</h1>";
-                    echo "<a href='mainLogin.html'>Go to Login?</a>";
+                    echo "<a href='index.html'>Go to Login?</a>";
                 }
                 else
                 {

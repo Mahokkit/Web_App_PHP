@@ -5,6 +5,6 @@
         session_start();
         if(empty($_SESSION['LoginUser'])) // || empty($_SESSION['LoginPwd']))
         {
-            header("location:mainLogin.html");
+            header("location:index.html");
         }
     }

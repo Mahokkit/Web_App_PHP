@@ -48,7 +48,7 @@
     {
         echo "Wrong Username or Password!";
         echo "<br/>";
-        echo '<a href="mainLogin.html">Try Again</a>'; 
+        echo '<a href="index.html">Try Again</a>';
     }
     
     ob_end_flush();
