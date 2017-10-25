@@ -13,11 +13,11 @@
         $conn = getDbConnection();
 
         $empID = $_POST['empID'];
-        $empFName = $_POST['empFName'];
-        $empLName = $_POST['empLName'];
-        $empBDate = $_POST['empBDate'];
-        $empGender = $_POST['empGender'];
-        $empHDate = $_POST['empHDate'];
+        $empFName = mysqli_real_escape_string($_POST['empFName']);
+        $empLName = mysqli_real_escape_string($_POST['empLName']);
+        $empBDate = mysqli_real_escape_string($_POST['empBDate']);
+        $empGender = mysqli_real_escape_string($_POST['empGender']);
+        $empHDate = mysqli_real_escape_string($_POST['empHDate']);
 
         $sql = "INSERT INTO employees (emp_no, birth_date, first_name, last_name, gender, hire_date) ";
         $sql .= "VALUE ('$empID','$empBDate','$empFName', '$empLName','$empGender','$empHDate')";

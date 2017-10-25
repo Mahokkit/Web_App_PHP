@@ -23,17 +23,17 @@
 //        $hdate = $_POST['empHDate'];
 
         $sql = "UPDATE employees SET birth_date = '";
-        $sql .= $_POST['empBDate'];
+        $sql .= mysqli_real_escape_string($_POST['empBDate']);
         $sql .= "', first_name = '";
-        $sql .= $_POST['empFName'];
+        $sql .= mysqli_real_escape_string($_POST['empFName']);
         $sql .= "', last_name ='";
-        $sql .= $_POST['empLName'];
+        $sql .= mysqli_real_escape_string($_POST['empLName']);
         $sql .= "', gender ='";
-        $sql .= $_POST['empGender'];
+        $sql .= mysqli_real_escape_string($_POST['empGender']);
         $sql .= "', hire_date = '";
-        $sql .= $_POST['empHDate'];
+        $sql .= mysqli_real_escape_string($_POST['empHDate']);
         $sql .= "' WHERE emp_no = ";
-        $sql .= $_POST['empID'];
+        $sql .= mysqli_real_escape_string($_POST['empID']);
         $sql .= ";";
 
 
