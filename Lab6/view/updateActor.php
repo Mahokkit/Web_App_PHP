@@ -37,5 +37,7 @@ and open the template in the editor.
                 <input type="submit" name="UpdateBtn" id="UpdateBtn" value="Update" onclick="return confirm('Do you Really want to Update?')"/>
             </p>
         </form>
+
+        <a href="../public/"> Back to Main Menu</a>
     </body>
 </html>

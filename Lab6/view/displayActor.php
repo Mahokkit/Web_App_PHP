@@ -6,7 +6,7 @@ and open the template in the editor.
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Actor</title>
+        <title>CRUD & Search Actor</title>
         <style type="text/css">
             table
             {
@@ -15,6 +15,10 @@ and open the template in the editor.
             th, td
             {
                 border: 1px solid red;
+            }
+            td
+            {
+                text-align: center;
             }
             #Insert{
                 margin-left: 5.3cm;
@@ -31,13 +35,12 @@ and open the template in the editor.
         endif;
         ?>
 
-
         <h1>Actor: Records</h1>
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
             <p>
-                <input type="text" name="searchBox" value="<?php echo $_POST['searchBox'] ?>" placeholder="Search . . .">
-                <input type="submit" name="submit" value="Search">
-                <input type="submit" name="insert" value="Insert Data" id="Insert">
+                <input type="text" name="searchBox" value="<?php echo $_POST['searchBox'] ?>">
+                <input type="submit" name="submit" value="Search Actor">
+                <input type="submit" name="insert" value="Insert New Actor" id="Insert">
             </p>
         </form>
         <table>

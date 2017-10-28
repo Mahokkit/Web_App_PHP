@@ -24,5 +24,7 @@
             </p>
 
         </form>
+
+        <a href="../public/"> Back to Main Menu</a>
     </body>
 </html>
