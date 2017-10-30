@@ -26,7 +26,8 @@ class PDOMysqlModel implements iDbInterface
             //connects to mysql db via PDO
             //if connection is successful, the resulting connection
             //is stored in the $dbConnection member variable defined above
-            $this->databaseConnection= new PDO("mysql:host=localhost;dbname=sakila","root","inet2005");
+//            $this->databaseConnection= new PDO("mysql:host=localhost;dbname=sakila","root","inet2005");
+            $this->databaseConnection = new PDO("sqlite:/home/inet2005/PhpstormProjects/W0057568_EdMa/Lab6/db/salika.sqlite");
             $this->databaseConnection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         }
         catch(PDOException $exception)
