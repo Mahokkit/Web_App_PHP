@@ -1,11 +1,7 @@
 <?php
 
 Route::get('/', function () {
-    $tasks = [
-        'Go to the store',
-        'Finish my screencast',
-        'Clean the house'
-    ];
+    $tasks = DB::table('tasks')->get();
     return view('welcome', compact('tasks'));
 });
 
