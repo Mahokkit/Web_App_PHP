@@ -20,4 +20,12 @@ class PostsController extends Controller
     {
         return view('posts.create');
     }
+
+    public function store()
+    {
+        dd(request()->all());
+        // create a new post using the request data
+        // save it to database
+        // and then redirect to the homepage
+    }
 }
