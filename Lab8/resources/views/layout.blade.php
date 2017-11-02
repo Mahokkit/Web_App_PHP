@@ -4,6 +4,11 @@
         <title>My Application</title>
     </head>
     <body>
-        @yield('content')
+        <div class="container"></div>
+            @yield('content')
+        </div>
+
+        @yield('footer')
     </body>
+
 </html>
