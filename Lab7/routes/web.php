@@ -1,7 +1,7 @@
 <?php
 
 use App\Task;
-//test
+
 
 Route::get('/tasks', 'TasksController@index');
 
