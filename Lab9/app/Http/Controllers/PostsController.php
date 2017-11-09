@@ -29,7 +29,7 @@ class PostsController extends Controller
 //            $posts->whereYear('created_at', $year);
 //        }
 //        $posts = $posts->get();
-        
+
         $posts = $posts->all();
 
         return view('posts.index', compact('posts'));
