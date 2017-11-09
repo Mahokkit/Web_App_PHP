@@ -2,12 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 
 use App\Post;
 
 class PostsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['index', 'show']);
+    }
+
     public function index()
     {
         $posts = Post::latest()->get();
@@ -31,7 +35,12 @@ class PostsController extends Controller
             'title' => 'required',
             'body' => 'required'
         ]);
-        Post::create(request(['title', 'body']));
+
+        auth()->user()->publish(
+            new Post(request(['title', 'body']))
+        );
+
+
         // and then redirect to the homepage
 
         return redirect('/');
