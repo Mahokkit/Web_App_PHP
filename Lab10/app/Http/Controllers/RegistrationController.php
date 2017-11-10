@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Http\Requests\RegistrationRequest;
 use App\User;
 use App\Mail\Welcome;
 
@@ -13,14 +14,10 @@ class RegistrationController extends Controller
         return view ('registration.create');
     }
 
-    public function store()
+    public function store(RegistrationRequest $request)
     {
         // Validate the form
-        $this->validate(request(), [
-            'name' => 'required',
-            'email' => 'required|email',
-            'password' => 'required|confirmed'
-        ]);
+
         // create and save user
 
         $user = User::create([
