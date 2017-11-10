@@ -2,9 +2,12 @@
 
 namespace App\Http\Requests;
 
+Use App\User;
+use App\Mail\Welcome;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Foundation\Http\FormRequest;
 
-class RegistrationRequest extends FormRequest
+class RegistrationForm extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -28,5 +31,20 @@ class RegistrationRequest extends FormRequest
             'email' => 'required|email',
             'password' => 'required|confirmed'
         ];
+    }
+
+    public function persist()
+    {
+
+        $user = User::create([
+            'name' => request('name'),
+            'email' => request('email'),
+            'password' => bcrypt(request('password'))
+        ]);
+        // sign them in
+        auth()->login($user);
+        // redirect to home
+
+        \Mail::to($user)->send(new Welcome($user));
     }
 }
