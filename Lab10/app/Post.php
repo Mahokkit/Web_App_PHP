@@ -3,6 +3,7 @@
 namespace App;
 
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Post extends Model
 {
@@ -45,5 +46,10 @@ class Post extends Model
             ->orderByRaw('min(created_at) desc')
             ->get()
             ->toArray();
+    }
+
+    public function tags()
+    {
+        return $this->BelongsToMany(Tag::class);
     }
 }
