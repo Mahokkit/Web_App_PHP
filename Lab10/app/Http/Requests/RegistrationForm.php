@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Mail\WelcomeAgain;
 Use App\User;
 use App\Mail\Welcome;
 use Illuminate\Support\Facades\Mail;
@@ -45,6 +46,6 @@ class RegistrationForm extends FormRequest
         auth()->login($user);
         // redirect to home
 
-        \Mail::to($user)->send(new Welcome($user));
+        \Mail::to($user)->send(new WelcomeAgain($user));
     }
 }
